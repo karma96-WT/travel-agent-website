@@ -1,3 +1,73 @@
-.home-page-div{
-    padding: 20px;
+.home-page-div {
+  width: 100%;
+  display: block;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  padding: 40px 0;         /* Adds space above and below the logo */
+  background-color: #fff;  /* Keeps the background clean */
+}
+.home-page-image-div{
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+.home-page-image {
+  height: 70vh;           /* Control the "shortness" here */
+  width: 85vw;             /* This prevents the "stretched" look */
+  max-width: 90%;          /* Ensures it doesn't touch screen edges on mobile */
+  object-fit: fill; 
+  justify-content: center;
+  align-items: center;    /* Ensures the whole logo is visible, not cropped */
+}
+
+.Taktsang-image-div {
+background-image: url('/Taktshang.png');
+min-height: 500px;  /* Force the div to be at least 500px tall */
+  height: 70vh;
+    /* Critical settings for a "Cool" UI */
+  background-size: cover;      /* Scales image to fill the div */
+  background-position: center; /* Keeps the temple centered */
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Keeps text from leaking out */
+}
+.Taktshang-image{     /* Control the "shortness" here */
+    width: 100%; 
+    height: 85vh;            /* This prevents the "stretched" look */
+    max-width: 90%;          /* Ensures it doesn't touch screen edges on mobile */
+    object-fit: fill; 
+    justify-content: center;
+    align-items: center;    /* Ensures the whole logo is visible, not cropped */
+}
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Give it some breathing room on the sides */
+  text-align: center;
+  color: white;
+  z-index: 10;
+  /* Add a slight dark background to help readability as text gets smaller */
+  background: rgba(0, 0, 0, 0.2); 
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.text-overlay p {
+  /* This is the magic line: */
+  /* It says: font stays between 12px and 24px, but scales at 2% of viewport width */
+  font-size: clamp(12px, 2vw, 24px); 
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+/* Specific style for your Bold Span inside the overlay */
+.text-overlay span {
+  font-size: clamp(14px, 2.5vw, 28px);
+}
+.home-page-image-style{
+    width: 400px;
+    height: 300px;
 }
