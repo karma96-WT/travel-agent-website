@@ -9,7 +9,7 @@ export default function Home() {
       <div className="home-page-div">
         <div className="home-page-image-div">
           <img
-            src="/Home-Page-image.png"
+            src="/Home-page-image.png"
             alt="Home Page Image"
             className="home-page-image"
           />
