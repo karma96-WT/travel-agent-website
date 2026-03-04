@@ -33,7 +33,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/destinations"
+              href="/"
               className="hover:text-blue-500 transition whitespace-nowrap"
             >
               ABOUT US
@@ -41,7 +41,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/packages"
+              href="/"
               className="hover:text-blue-500 transition whitespace-nowrap"
             >
               TOURS
@@ -49,7 +49,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/about"
+              href="/"
               className="hover:text-blue-500 transition whitespace-nowrap"
             >
               TREKKINGS
@@ -57,7 +57,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/about"
+              href="/"
               className="hover:text-blue-500 transition whitespace-nowrap"
             >
               CUSTOMIZE TOURS
@@ -65,7 +65,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/about"
+              href="/"
               className="hover:text-blue-500 transition whitespace-nowrap"
             >
               GALLERY
@@ -73,7 +73,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/about"
+              href="/"
               className="hover:text-blue-500 transition whitespace-nowrap"
             >
               BLOGS
