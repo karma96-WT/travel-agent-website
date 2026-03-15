@@ -1,0 +1,220 @@
+"use client";
+
+import React, { useState } from "react";
+import Navbar from "@/app/components/navbar";
+
+import {
+  Send,
+  Users,
+  Calendar,
+  MapPin,
+  Mail,
+  Phone,
+  Home,
+  Wallet,
+} from "lucide-react";
+
+const BookingForm = () => {
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("submitting");
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    // Logic to send to your API/Email Service
+    try {
+      // Replace this with your actual API endpoint or Server Action
+      // const response = await fetch('/api/send-email', { method: 'POST', body: JSON.stringify(data) });
+
+      console.log("Form Data Captured:", data);
+
+      // Simulating a network delay
+      setTimeout(() => {
+        setStatus("success");
+      }, 1500);
+    } catch (error) {
+      setStatus("error");
+    }
+  };
+
+  if (status === "success") {
+    return (
+      <div className="bg-green-50 border border-green-200 p-10 rounded-3xl text-center max-w-2xl mx-auto my-12">
+        <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
+          <Send size={32} />
+        </div>
+        <h2 className="text-2xl font-bold text-green-800 mb-2">Thank You!</h2>
+        <p className="text-green-700">
+          Your Bhutan trip inquiry has been sent to our agents. We will contact
+          you within 24 hours.
+        </p>
+        <button
+          onClick={() => setStatus("idle")}
+          className="mt-6 text-green-800 font-semibold underline"
+        >
+          Send another request
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <Navbar />
+      <section className="max-w-4xl mx-auto p-8 bg-white shadow-2xl rounded-3xl border border-slate-100 my-12">
+        <div className="mb-8 border-b pb-6">
+          <h2 className="text-3xl font-bold text-slate-900">
+            Customize Your Bhutan Dream Trip
+          </h2>
+          <p className="text-slate-500 mt-2">
+            Fill out the form below and Bhutan Happiness Tours will build your
+            perfect itinerary.
+          </p>
+        </div>
+
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          {/* Full Name */}
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold text-slate-700 flex items-center gap-2">
+              <Users size={16} /> Full Name
+            </label>
+            <input
+              required
+              name="name"
+              type="text"
+              placeholder="John Doe"
+              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
+            />
+          </div>
+
+          {/* Email / Phone */}
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold text-slate-700 flex items-center gap-2">
+              <Mail size={16} /> Email or Phone
+            </label>
+            <input
+              required
+              name="contact"
+              type="text"
+              placeholder="email@example.com or +1..."
+              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
+            />
+          </div>
+
+          {/* Travel Dates */}
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold text-slate-700 flex items-center gap-2">
+              <Calendar size={16} /> Travel Dates
+            </label>
+            <input
+              required
+              name="dates"
+              type="text"
+              placeholder="e.g., Oct 2024 or 12-20 Nov"
+              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
+            />
+          </div>
+
+          {/* Number of People */}
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold text-slate-700 flex items-center gap-2">
+              <Users size={16} /> Number of People
+            </label>
+            <input
+              required
+              name="guests"
+              type="number"
+              min="1"
+              placeholder="2"
+              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
+            />
+          </div>
+
+          {/* Type of Tour Dropdown */}
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold text-slate-700 flex items-center gap-2">
+              <MapPin size={16} /> Type of Tour
+            </label>
+            <select
+              name="tourType"
+              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition bg-white"
+            >
+              <option>Cultural Tour</option>
+              <option>Trekking Adventure</option>
+              <option>Spiritual & Wellness</option>
+              <option>Photography Tour</option>
+              <option>Festival Special</option>
+            </select>
+          </div>
+
+          {/* Accommodation Preference */}
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold text-slate-700 flex items-center gap-2">
+              <Home size={16} /> Accommodation
+            </label>
+            <select
+              name="accommodation"
+              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition bg-white"
+            >
+              <option>Standard (3-Star)</option>
+              <option>Luxury (4/5-Star)</option>
+              <option>Homestay Experience</option>
+            </select>
+          </div>
+
+          {/* Budget Range */}
+          <div className="flex flex-col md:col-span-2 gap-2">
+            <label className="font-semibold text-slate-700 flex items-center gap-2">
+              <Wallet size={16} /> Budget Range (Per Person)
+            </label>
+            <input
+              name="budget"
+              type="text"
+              placeholder="e.g., $2000 - $3000"
+              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
+            />
+          </div>
+
+          {/* Special Requests */}
+          <div className="flex flex-col md:col-span-2 gap-2">
+            <label className="font-semibold text-slate-700">
+              Special Requests / Interests
+            </label>
+            <textarea
+              name="requests"
+              rows={4}
+              placeholder="Tell us about any specific interests, dietary needs, or celebrations..."
+              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <div className="md:col-span-2">
+            <button
+              type="submit"
+              disabled={status === "submitting"}
+              className={`w-full py-4 rounded-xl font-bold text-white transition shadow-lg flex items-center justify-center gap-2 ${
+                status === "submitting"
+                  ? "bg-slate-400"
+                  : "bg-orange-600 hover:bg-orange-700 shadow-orange-200"
+              }`}
+            >
+              {status === "submitting" ? "Sending..." : "Submit Inquiry"}
+              <Send size={18} />
+            </button>
+          </div>
+        </form>
+      </section>
+    </>
+  );
+};
+
+export default BookingForm;
