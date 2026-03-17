@@ -669,7 +669,7 @@ export default function Home() {
                 <div className="flex items-center gap-4">
                   {/* Facebook Icon */}
                   <a
-                    href="Facebook: https://www.facebook.com/share/1CBUMTBnXW/"
+                    href="https://www.facebook.com/share/1CBUMTBnXW/"
                     className="p-3 bg-indigo-100 text-indigo-600 rounded-full hover:bg-indigo-600 hover:text-white transition-all shadow-sm"
                   >
                     <svg
