@@ -52,7 +52,7 @@ const BhutanBlog = () => {
             {/* Point 1: Culture */}
             <div className="group">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-5xl font-black text-gray-100 group-hover:text-green-100 transition-colors">
+                <span className="text-5xl font-black text-gray-100 group-hover:text-emerald-700 transition-colors">
                   01
                 </span>
                 <h2 className="text-3xl font-bold text-gray-900">
@@ -63,7 +63,7 @@ const BhutanBlog = () => {
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Bhutan is a country where{" "}
                   <span className="font-semibold text-gray-800">
-                    tradition meets everyday life
+                    tradition meets everyday life.{" "}
                   </span>
                   From majestic dzongs (fortresses) to colorful festivals, every
                   moment reflects Bhutanese heritage. Travelers can witness
@@ -74,76 +74,95 @@ const BhutanBlog = () => {
             </div>
 
             {/* Point 2: Landscapes */}
-            <div>
+            <div className="group">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-5xl font-black text-gray-100">02</span>
+                <span className="text-5xl font-black text-gray-100 group-hover:text-emerald-700 transition-colors">
+                  02
+                </span>
                 <h2 className="text-3xl font-bold text-gray-900">
                   Explore Stunning Natural Landscapes
                 </h2>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                Whether it’s the lush valleys of Punakha, the high-altitude
-                trails of Paro, or the pristine forests of Phobjikha, Bhutan
-                offers{" "}
-                <span className="text-[#063b1a] font-bold">
-                  breathtaking scenery
-                </span>
-                Hiking and trekking enthusiasts can enjoy trails ranging from
-                short scenic walks to challenging multi-day treks through the
-                Himalayas
-              </p>
+              <div className="bg-gray-50 p-8 rounded-[2.5rem] border-l-8 border-[#063b1a]">
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Whether it’s the lush valleys of Punakha, the high-altitude
+                  trails of Paro, or the pristine forests of Phobjikha, Bhutan
+                  offers{" "}
+                  <span className="font-semibold text-gray-800">
+                    breathtaking scenery.{" "}
+                  </span>
+                  Hiking and trekking enthusiasts can enjoy trails ranging from
+                  short scenic walks to challenging multi-day treks through the
+                  Himalayas
+                </p>
+              </div>
             </div>
 
             {/* Point 3: Spiritual (Pull Quote Style) */}
-            <div className="relative py-12">
-              <div className="absolute inset-0 bg-green-50 rounded-[3rem] -rotate-1"></div>
-              <div className="relative p-10">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  3️ Spiritual and Mindful Journeys
+            <div className="group">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-5xl font-black text-gray-100 group-hover:text-emerald-700 transition-colors">
+                  03
+                </span>
+                <h2 className="text-3xl font-bold text-gray-900">
+                  Spiritual and Mindful Journeys
                 </h2>
-                <p className="text-xl text-gray-700 italic leading-relaxed">
+              </div>
+              <div className="bg-gray-50 p-8 rounded-[2.5rem] border-l-8 border-[#063b1a]">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   "Bhutan is a destination for the soul as much as for the eyes.
                   Visitors can meditate in monasteries, hike to cliffside
                   temples like Tiger’s Nest, or simply enjoy the calm of its
-                  remote valleys."
-                </p>
-                <p className="mt-6 text-gray-600">
-                  The country’s philosophy of{" "}
-                  <span className="font-bold">Gross National Happiness</span>{" "}
+                  remote valleys.The country’s philosophy of{" "}
+                  <span className="font-semibold text-gray-800">
+                    Gross National Happiness{" "}
+                  </span>
                   encourages travelers to connect with nature and local
                   communities in meaningful ways.
                 </p>
               </div>
             </div>
-
-            {/* Point 4 & 5: Bottom Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  4️ Sustainable Tourism
+            {/* Point 4: Sustainable Tourism */}
+            <div className="group">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-5xl font-black text-gray-100 group-hover:text-emerald-700 transition-colors">
+                  04
+                </span>
+                <h2 className="text-3xl font-bold text-gray-900">
+                  Sustainable Tourism
                 </h2>
-                <p className="text-gray-600 leading-relaxed">
+              </div>
+              <div className="bg-gray-50 p-8 rounded-[2.5rem] border-l-8 border-[#063b1a]">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   Bhutan emphasizes{" "}
-                  <span className="font-medium text-gray-800">
-                    responsible tourism
+                  <span className="font-semibold text-gray-800">
+                    responsible tourism{" "}
                   </span>
                   , preserving its environment and culture. Travelers contribute
                   to local communities and enjoy a pristine, pollution-free
                   experience that is rare in today’s world.
                 </p>
               </div>
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  5️ Best Time to Visit
+            </div>
+            {/* Point 5: Best Time to Visit */}
+            <div className="group">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-5xl font-black text-gray-100 group-hover:text-emerald-700 transition-colors">
+                  05
+                </span>
+                <h2 className="text-3xl font-bold text-gray-900">
+                  Best Time to Visit
                 </h2>
-                <p className="text-gray-600 leading-relaxed">
+              </div>
+              <div className="bg-gray-50 p-8 rounded-[2.5rem] border-l-8 border-[#063b1a]">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   The ideal seasons to visit Bhutan are{" "}
-                  <span className="text-[#063b1a] font-bold">
+                  <span className="font-semibold text-gray-800">
                     spring (March–May)
                   </span>{" "}
                   and{" "}
-                  <span className="text-[#063b1a] font-bold">
-                    autumn (September–November)
+                  <span className="font-semibold text-gray-800">
+                    autumn (September–November).{" "}
                   </span>
                   Spring brings blooming rhododendrons, while autumn offers
                   clear skies and vibrant festivals.
@@ -155,7 +174,7 @@ const BhutanBlog = () => {
           {/* Conclusion & CTA */}
           <footer className="mt-32 pt-16 border-t border-gray-100 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              ✨ Conclusion
+              Conclusion
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-12">
               Bhutan is more than a travel destination; it’s an experience that

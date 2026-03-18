@@ -128,7 +128,7 @@ const TreksPage = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="font-bold text-gray-400 uppercase text-[10px] w-16">
-                        Season
+                        Best Season
                       </span>
                       <span className="font-medium">{trek.season}</span>
                     </div>

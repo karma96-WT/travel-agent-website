@@ -104,7 +104,7 @@ const BookingForm = () => {
               required
               name="contact"
               type="text"
-              placeholder="email@example.com or +1..."
+              placeholder="email@example.com or +975..."
               className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
             />
           </div>
@@ -204,7 +204,7 @@ const BookingForm = () => {
               className={`w-full py-4 rounded-xl font-bold text-white transition shadow-lg flex items-center justify-center gap-2 ${
                 status === "submitting"
                   ? "bg-slate-400"
-                  : "bg-orange-600 hover:bg-orange-700 shadow-orange-200"
+                  : "bg-emerald-600 hover:bg-emerald-700 shadow-emerald-200"
               }`}
             >
               {status === "submitting" ? "Sending..." : "Submit Inquiry"}

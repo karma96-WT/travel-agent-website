@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "./components/navbar";
 import "./local.css";
+import { CheckCircle2 } from "lucide-react";
 
 export default function Home() {
   return (
@@ -474,20 +475,28 @@ export default function Home() {
               </div>
               <ul className="space-y-4 text-gray-600">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   Most foreigners need visa approval before arrival.
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   Indians, Bangladeshis & Maldivians need an Entry Permit (no
                   visa).
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   Passport must be valid at least 6 months.
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   Apply online via the Department of Immigration or through a
                   tour operator.
                 </li>
@@ -504,19 +513,27 @@ export default function Home() {
               </div>
               <ul className="space-y-4 text-gray-600">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   International tourists: USD 100 per night.
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   Indian nationals: INR 1,200 per night.
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   Children discounts apply.
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   SDF is separate from hotel, guide, transport, and visa fees.
                 </li>
               </ul>
@@ -534,12 +551,16 @@ export default function Home() {
               </div>
               <ul className="space-y-4 text-gray-600">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   Main airport: Paro International Airport
                 </li>
                 <li className="flex items-start gap-3 flex-col w-full">
                   <div className="flex items-start gap-3">
-                    <span className="text-[#063b1a] mt-1.5">•</span>
+                    <span className="text-[#063b1a] mt-1.5">
+                      <CheckCircle2 className="w-6 h-6 text-green-600" />
+                    </span>
                     <span>Land borders from India:</span>
                   </div>
                   <div className="grid grid-cols-2 gap-2 ml-6 mt-2 w-full">
@@ -573,15 +594,21 @@ export default function Home() {
               </div>
               <ul className="space-y-4 text-gray-600">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   Independent travel allowed.
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   Licensed guide required for some restricted areas.
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">•</span>
+                  <span className="text-[#063b1a] mt-1.5">
+                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  </span>
                   Popular places like Thimphu and Paro are easily accessible.
                 </li>
               </ul>

@@ -1,7 +1,29 @@
+"use client";
 import React from "react";
 import Navbar from "@/app/components/navbar";
+import { useState } from "react";
 
 const AboutPage = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const carouselImages = [
+    "/bhutan1.jpeg", // Replace with your actual image paths
+    "/bhutan2.jpeg",
+    "/bhutan3.jpeg",
+    "/bhutan4.jpeg",
+  ];
+
+  const nextSlide = () => {
+    setCurrentImage((prev) =>
+      prev === carouselImages.length - 1 ? 0 : prev + 1,
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentImage((prev) =>
+      prev === 0 ? carouselImages.length - 1 : prev - 1,
+    );
+  };
   return (
     <>
       <Navbar />
@@ -76,10 +98,54 @@ const AboutPage = () => {
                   ))}
                 </ul>
               </div>
-              <div className="md:w-1/2 h-64 md:h-96 w-full bg-gray-200 rounded-[2.5rem] overflow-hidden shadow-inner">
-                {/* Place for a local scenery or office image */}
-                <div className="flex items-center justify-center h-full text-gray-400 italic">
+              {/* FIXED CAROUSEL CONTAINER */}
+              <div className="md:w-1/2 h-64 md:h-96 w-full bg-gray-200 rounded-[2.5rem] overflow-hidden shadow-inner relative group">
+                {/* The Text Overlay (Stays in background) */}
+                <div className="absolute inset-0 flex items-center justify-center z-110 text-white italic pointer-events-none text-xl">
                   Exploring Bhutan's Essence
+                </div>
+
+                {/* The Images Stacked - Now using w-full and h-full */}
+                {carouselImages.map((src, index) => (
+                  <img
+                    key={index}
+                    src={src}
+                    alt={`Bhutan Scenery ${index + 1}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                      index === currentImage
+                        ? "opacity-100 z-10"
+                        : "opacity-0 z-0"
+                    }`}
+                  />
+                ))}
+
+                {/* Navigation Buttons (Higher Z-index to stay on top) */}
+                {/* 3. Navigation Buttons (Dark Green & Always Visible) */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-[#063b1a] hover:bg-[#0a5225] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-transform active:scale-90"
+                >
+                  <span className="text-xl">⬅️</span>
+                </button>
+
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-[#063b1a] hover:bg-[#0a5225] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-transform active:scale-90"
+                >
+                  <span className="text-xl">➡️</span>
+                </button>
+
+                {/* Slide Indicators (Dots) */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                  {carouselImages.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentImage(i)}
+                      className={`h-1.5 transition-all duration-300 rounded-full ${
+                        i === currentImage ? "w-6 bg-white" : "w-2 bg-white/50"
+                      }`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>

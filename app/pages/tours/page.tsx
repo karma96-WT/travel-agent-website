@@ -7,8 +7,8 @@ const BhutanToursPage = () => {
       id: 1,
       title: "3 Days / 2 Nights – Bhutan Short Escape",
       icon: "⚡",
-      color: "bg-blue-50",
-      textColor: "text-blue-700",
+      color: "bg-emerald-50",
+      textColor: "text-emerald-700",
       itinerary: [
         {
           day: "Day 1",
@@ -51,8 +51,8 @@ const BhutanToursPage = () => {
       id: 3,
       title: "7 Days / 6 Nights – Bhutan Highlights Tour",
       icon: "🏔",
-      color: "bg-orange-50",
-      textColor: "text-orange-700",
+      color: "bg-emerald-50",
+      textColor: "text-emerald-700",
       itinerary: [
         { day: "Day 1", activity: "Arrival Paro – Thimphu" },
         { day: "Day 2", activity: "Thimphu full-day exploration" },
@@ -70,8 +70,8 @@ const BhutanToursPage = () => {
       id: 4,
       title: "10 Days / 9 Nights – Grand Bhutan Experience",
       icon: "🌸",
-      color: "bg-pink-50",
-      textColor: "text-pink-700",
+      color: "bg-emerald-50",
+      textColor: "text-emerald-700",
       itinerary: [
         { day: "Day 1–2", activity: "Paro & Thimphu exploration" },
         { day: "Day 3–4", activity: "Punakha Valley" },
