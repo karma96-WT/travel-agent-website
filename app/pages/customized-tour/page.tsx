@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Navbar from "@/app/components/navbar";
+import { sendEmail } from "@/app/action";
 
 import {
   Send,
@@ -26,18 +27,18 @@ const BookingForm = () => {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
-    // Logic to send to your API/Email Service
     try {
-      // Replace this with your actual API endpoint or Server Action
-      // const response = await fetch('/api/send-email', { method: 'POST', body: JSON.stringify(data) });
+      // 3. Call the Server Action directly
+      const result = await sendEmail(formData);
 
-      console.log("Form Data Captured:", data);
-
-      // Simulating a network delay
-      setTimeout(() => {
+      if (result.success) {
         setStatus("success");
-      }, 1500);
+      } else {
+        console.error("Resend Error:", result.error);
+        setStatus("error");
+      }
     } catch (error) {
+      console.error("Submission Error:", error);
       setStatus("error");
     }
   };
@@ -66,7 +67,7 @@ const BookingForm = () => {
   return (
     <>
       <Navbar />
-      <section className="max-w-4xl mx-auto p-8 bg-white shadow-2xl rounded-3xl border border-slate-100 my-12">
+      <section className="max-w-4xl mx-auto p-8 bg-white dark:bg-white shadow-2xl rounded-3xl border border-slate-100 my-12">
         <div className="mb-8 border-b pb-6">
           <h2 className="text-3xl font-bold text-slate-900">
             Customize Your Bhutan Dream Trip
@@ -83,7 +84,7 @@ const BookingForm = () => {
         >
           {/* Full Name */}
           <div className="flex flex-col gap-2">
-            <label className="font-semibold text-slate-700 flex items-center gap-2">
+            <label className="font-semibold text-slate-700  flex items-center gap-2">
               <Users size={16} /> Full Name
             </label>
             <input
@@ -91,7 +92,7 @@ const BookingForm = () => {
               name="name"
               type="text"
               placeholder="John Doe"
-              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
+              className="p-3 border rounded-xl dark:text-slate-700 focus:ring-2 focus:ring-orange-500 outline-none transition"
             />
           </div>
 
@@ -103,24 +104,51 @@ const BookingForm = () => {
             <input
               required
               name="contact"
-              type="text"
+              type="email"
+              pattern="^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})|(\+?[0-9\s\-]{7,15})$"
+              title="Please enter a valid email address or phone number (e.g., +975 17112233)"
               placeholder="email@example.com or +975..."
-              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
+              className="p-3 dark:text-slate-700 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
             />
           </div>
 
           {/* Travel Dates */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 md:col-span-2">
             <label className="font-semibold text-slate-700 flex items-center gap-2">
-              <Calendar size={16} /> Travel Dates
+              <Calendar size={16} /> Travel Date (Day / Month / Year)
             </label>
-            <input
-              required
-              name="dates"
-              type="text"
-              placeholder="e.g., Oct 2024 or 12-20 Nov"
-              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
-            />
+            <div className="grid grid-cols-3 gap-4">
+              {/* Day */}
+              <input
+                required
+                name="day"
+                type="number"
+                min="1"
+                max="31"
+                placeholder="DD"
+                className="p-3 border dark:text-slate-700 rounded-xl focus:ring-2 focus:ring-emerald-500 outline-none"
+              />
+              {/* Month */}
+              <input
+                required
+                name="month"
+                type="number"
+                min="1"
+                max="12"
+                placeholder="MM"
+                className="p-3 border dark:text-slate-700 rounded-xl focus:ring-2 focus:ring-emerald-500 outline-none"
+              />
+              {/* Year*/}
+              <input
+                required
+                name="year"
+                type="number"
+                min="2026"
+                max="2030"
+                placeholder="YYYY"
+                className="p-3 border dark:text-slate-700 rounded-xl focus:ring-2 focus:ring-emerald-500 outline-none"
+              />
+            </div>
           </div>
 
           {/* Number of People */}
@@ -134,7 +162,7 @@ const BookingForm = () => {
               type="number"
               min="1"
               placeholder="2"
-              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
+              className="p-3 border dark:text-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
             />
           </div>
 
@@ -145,8 +173,13 @@ const BookingForm = () => {
             </label>
             <select
               name="tourType"
-              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition bg-white"
+              required
+              defaultValue=""
+              className="p-3 border dark:text-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition bg-white"
             >
+              <option value="" disabled>
+                Select a tour type...
+              </option>
               <option>Cultural Tour</option>
               <option>Trekking Adventure</option>
               <option>Spiritual & Wellness</option>
@@ -162,8 +195,13 @@ const BookingForm = () => {
             </label>
             <select
               name="accommodation"
-              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition bg-white"
+              required
+              defaultValue=""
+              className="p-3 border dark:text-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition bg-white"
             >
+              <option value="" disabled>
+                Select accommodation...
+              </option>
               <option>Standard (3-Star)</option>
               <option>Luxury (4/5-Star)</option>
               <option>Homestay Experience</option>
@@ -172,27 +210,27 @@ const BookingForm = () => {
 
           {/* Budget Range */}
           <div className="flex flex-col md:col-span-2 gap-2">
-            <label className="font-semibold text-slate-700 flex items-center gap-2">
+            <label className="font-semibold text-slate-700 dark:text-slate-700 flex items-center gap-2">
               <Wallet size={16} /> Budget Range (Per Person)
             </label>
             <input
               name="budget"
               type="text"
               placeholder="e.g., $2000 - $3000"
-              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
+              className="p-3 border text-slate-700 dark:text-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
             />
           </div>
 
           {/* Special Requests */}
           <div className="flex flex-col md:col-span-2 gap-2">
-            <label className="font-semibold text-slate-700">
+            <label className="font-semibold text-slate-700 dark:text-slate-700">
               Special Requests / Interests
             </label>
             <textarea
               name="requests"
               rows={4}
               placeholder="Tell us about any specific interests, dietary needs, or celebrations..."
-              className="p-3 border rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
+              className="p-3 border dark:text-slate-700 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition"
             ></textarea>
           </div>
 
