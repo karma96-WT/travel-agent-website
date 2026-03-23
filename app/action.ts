@@ -43,7 +43,7 @@ export async function sendEmail(formData: FormData) {
     // 3. Define the Email Options
     const mailOptions = {
       from: `"Bhutan Happiness Tours and Treks" <${process.env.EMAIL_USER}>`,
-      to: "sangayblon2002@gmail.com",
+      to: "acharyasomnath123@gmail.com",
       subject: `New Inquiry from ${name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">

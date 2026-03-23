@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Navbar from "./components/navbar";
 import "./local.css";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Link } from "lucide-react";
 import Footer from "./components/footer";
 
 export default function Home() {
@@ -635,12 +635,15 @@ export default function Home() {
                 single step. Let us craft your perfect Bhutanese escape.
               </p>
 
-              <button className="relative overflow-hidden bg-white text-[#063b1a] px-10 py-4 rounded-full font-bold text-lg md:text-xl shadow-xl transition-all duration-300 hover:scale-105 hover:bg-green-50 active:scale-95 flex items-center gap-3">
+              <a
+                href="mailto:acharyasomnath123@gmail.com"
+                className="relative overflow-hidden bg-white text-[#063b1a] px-10 py-4 rounded-full font-bold text-lg md:text-xl shadow-xl transition-all duration-300 hover:scale-105 hover:bg-green-50 active:scale-95 flex items-center gap-3"
+              >
                 PLAN YOUR TRIP
                 <span className="transition-transform duration-300 group-hover:translate-x-2">
                   →
                 </span>
-              </button>
+              </a>
             </div>
 
             {/* Bottom Corner Accent */}
