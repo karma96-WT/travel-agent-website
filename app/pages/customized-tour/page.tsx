@@ -104,7 +104,7 @@ const BookingForm = () => {
             <input
               required
               name="contact"
-              type="email"
+              type="text"
               pattern="^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})|(\+?[0-9\s\-]{7,15})$"
               title="Please enter a valid email address or phone number (e.g., +975 17112233)"
               placeholder="email@example.com or +975..."
