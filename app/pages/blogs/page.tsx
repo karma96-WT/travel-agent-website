@@ -2,6 +2,7 @@
 import React from "react";
 import { MapPin, Calendar, Leaf, Heart, ArrowRight } from "lucide-react";
 import Navbar from "@/app/components/navbar";
+import Footer from "@/app/components/footer";
 
 const BhutanBlog = () => {
   return (
@@ -10,14 +11,6 @@ const BhutanBlog = () => {
       <article className="bg-white min-h-screen">
         {/* 1. Blog Hero Header */}
         <header className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-[#063b1a]">
-          <div className="absolute inset-0 opacity-40">
-            {/* Placeholder for a stunning Bhutan landscape image */}
-            <img
-              src="/bhutan-landscape.jpg"
-              alt="Bhutan"
-              className="w-full h-full object-cover"
-            />
-          </div>
           <div className="relative z-10 text-center px-6 max-w-4xl">
             <span className="bg-white/20 backdrop-blur-md text-white px-4 py-1 rounded-full text-sm font-bold tracking-widest uppercase mb-6 inline-block">
               Travel Guide
@@ -197,6 +190,7 @@ const BhutanBlog = () => {
           </footer>
         </section>
       </article>
+      <Footer />
     </>
   );
 };

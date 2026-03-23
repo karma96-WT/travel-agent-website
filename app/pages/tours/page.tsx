@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "@/app/components/navbar";
+import Footer from "@/app/components/footer";
 
 const BhutanToursPage = () => {
   const tours = [
@@ -150,6 +151,7 @@ const BhutanToursPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

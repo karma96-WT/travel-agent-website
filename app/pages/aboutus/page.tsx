@@ -2,6 +2,7 @@
 import React from "react";
 import Navbar from "@/app/components/navbar";
 import { useState } from "react";
+import Footer from "@/app/components/footer";
 
 const AboutPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -227,6 +228,7 @@ const AboutPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

@@ -2,13 +2,14 @@
 
 import React from "react";
 import Navbar from "@/app/components/navbar";
+import Footer from "@/app/components/footer";
 
 const GalleryPage = () => {
   return (
     <>
       <Navbar />
       <div className="max-w-6xl mx-auto px-4 py-12 font-sans text-slate-800">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 leading-tight text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-slate-100 leading-tight text-center">
           Explore Our Gallery
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed text-center mb-12">
@@ -106,6 +107,7 @@ const GalleryPage = () => {
           />
         </div>
       </div>
+      <Footer />
     </>
   );
 };

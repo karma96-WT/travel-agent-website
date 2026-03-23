@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "@/app/components/navbar";
 import { sendEmail } from "@/app/action";
+import Footer from "@/app/components/footer";
 
 import {
   Send,
@@ -251,6 +252,7 @@ const BookingForm = () => {
           </div>
         </form>
       </section>
+      <Footer />
     </>
   );
 };

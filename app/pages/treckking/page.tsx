@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Navbar from "@/app/components/navbar";
-
+import Footer from "@/app/components/footer";
 const TreksPage = () => {
   const treks = [
     {
@@ -185,6 +185,7 @@ const TreksPage = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           </div>
         </section>
+        <Footer />
       </div>
     </>
   );
