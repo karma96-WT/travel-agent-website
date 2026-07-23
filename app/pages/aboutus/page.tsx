@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Navbar from "@/app/components/navbar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "@/app/components/footer";
 
 const AboutPage = () => {
@@ -25,9 +25,25 @@ const AboutPage = () => {
       prev === 0 ? carouselImages.length - 1 : prev - 1,
     );
   };
+  const [isScrolled, setIsScrolled] = useState(false);
+     useEffect(() => {
+      const handleScroll = () => {
+        // Check if user has scrolled more than 50px
+        const scrollPosition = window.scrollY;
+        setIsScrolled(scrollPosition > 50);
+      };
+  
+      // Add scroll event listener
+      window.addEventListener("scroll", handleScroll);
+  
+      // Clean up event listener
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
   return (
     <>
-      <Navbar />
+      <Navbar isScrolled={isScrolled} />
       <div className="bg-white text-gray-800">
         {/* 1. Hero Section: CEO & Introduction */}
         <section className="relative py-16 lg:py-24 px-6 max-w-7xl mx-auto">

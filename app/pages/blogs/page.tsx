@@ -3,14 +3,32 @@ import React from "react";
 import { MapPin, Calendar, Leaf, Heart, ArrowRight } from "lucide-react";
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
+import { useState, useEffect } from "react";
+
 
 const BhutanBlog = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+     useEffect(() => {
+      const handleScroll = () => {
+        // Check if user has scrolled more than 50px
+        const scrollPosition = window.scrollY;
+        setIsScrolled(scrollPosition > 50);
+      };
+  
+      // Add scroll event listener
+      window.addEventListener("scroll", handleScroll);
+  
+      // Clean up event listener
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
   return (
     <>
-      <Navbar />
-      <article className="bg-white min-h-screen">
+      <Navbar isScrolled = {isScrolled} />
+      <article className="bg-white min-h-screen ">
         {/* 1. Blog Hero Header */}
-        <header className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-[#063b1a]">
+        <header className="relative h-[60vh] pt-25 flex items-center justify-center overflow-hidden bg-[#063b1a]">
           <div className="relative z-10 text-center px-6 max-w-4xl">
             <span className="bg-white/20 backdrop-blur-md text-white px-4 py-1 rounded-full text-sm font-bold tracking-widest uppercase mb-6 inline-block">
               Travel Guide

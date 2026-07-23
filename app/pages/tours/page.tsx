@@ -1,13 +1,32 @@
+'use client'
+
 import React from "react";
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
+import { useState, useEffect } from "react";
 
 const BhutanToursPage = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+       useEffect(() => {
+        const handleScroll = () => {
+          // Check if user has scrolled more than 50px
+          const scrollPosition = window.scrollY;
+          setIsScrolled(scrollPosition > 50);
+        };
+    
+        // Add scroll event listener
+        window.addEventListener("scroll", handleScroll);
+    
+        // Clean up event listener
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+
   const tours = [
     {
       id: 1,
       title: "3 Days / 2 Nights – Bhutan Short Escape",
-      icon: "⚡",
       color: "bg-emerald-50",
       textColor: "text-emerald-700",
       itinerary: [
@@ -30,7 +49,6 @@ const BhutanToursPage = () => {
     {
       id: 2,
       title: "5 Days / 4 Nights – Cultural Discovery",
-      icon: "🏞",
       color: "bg-emerald-50",
       textColor: "text-emerald-700",
       itinerary: [
@@ -51,7 +69,6 @@ const BhutanToursPage = () => {
     {
       id: 3,
       title: "7 Days / 6 Nights – Bhutan Highlights Tour",
-      icon: "🏔",
       color: "bg-emerald-50",
       textColor: "text-emerald-700",
       itinerary: [
@@ -70,7 +87,6 @@ const BhutanToursPage = () => {
     {
       id: 4,
       title: "10 Days / 9 Nights – Grand Bhutan Experience",
-      icon: "🌸",
       color: "bg-emerald-50",
       textColor: "text-emerald-700",
       itinerary: [
@@ -89,8 +105,8 @@ const BhutanToursPage = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="bg-gray-50 min-h-screen py-12 px-6">
+      <Navbar isScrolled={isScrolled}/>
+      <div className="bg-gray-50 min-h-screen py-12 px-6 pt-20">
         <div className="max-w-6xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-16">
@@ -116,7 +132,6 @@ const BhutanToursPage = () => {
                 {/* Card Header */}
                 <div className={`p-8 ${tour.color} border-b border-gray-100`}>
                   <div className="flex items-center gap-4 mb-2">
-                    <span className="text-4xl">{tour.icon}</span>
                     <h2 className={`text-2xl font-bold ${tour.textColor}`}>
                       {tour.title}
                     </h2>

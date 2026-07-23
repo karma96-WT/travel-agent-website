@@ -491,7 +491,6 @@ export default function Home() {
             {/* Card 1: Visa & Entry */}
             <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-3xl bg-blue-50 p-3 rounded-2xl">🛂</span>
                 <h2 className="text-2xl font-bold text-gray-800">
                   Visa & Entry
                 </h2>
@@ -529,7 +528,6 @@ export default function Home() {
             {/* Card 2: SDF */}
             <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-3xl bg-green-50 p-3 rounded-2xl">💰</span>
                 <h2 className="text-2xl font-bold text-gray-800">
                   Sustainable Development Fee (SDF)
                 </h2>
@@ -565,9 +563,7 @@ export default function Home() {
             {/* Card 3: Entry Points */}
             <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-3xl bg-orange-50 p-3 rounded-2xl">
-                  ✈️
-                </span>
+               
                 <h2 className="text-2xl font-bold text-gray-800">
                   Entry Points
                 </h2>
@@ -608,9 +604,7 @@ export default function Home() {
             {/* Card 4: Travel Rules */}
             <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-3xl bg-purple-50 p-3 rounded-2xl">
-                  🧭
-                </span>
+               
                 <h2 className="text-2xl font-bold text-gray-800">
                   Travel Rules
                 </h2>

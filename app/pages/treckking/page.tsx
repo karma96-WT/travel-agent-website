@@ -2,7 +2,26 @@
 import React from "react";
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
+import { useState, useEffect } from "react";
+
 const TreksPage = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if user has scrolled more than 50px
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const treks = [
     {
       id: 1,
@@ -13,7 +32,6 @@ const TreksPage = () => {
       highlights:
         "Iconic cliffside monastery, scenic Paro valley, meditation caves",
       accommodation: "Stay in Paro or Thimphu hotels/lodges",
-      icon: "🏔️",
     },
     {
       id: 2,
@@ -24,7 +42,6 @@ const TreksPage = () => {
       highlights:
         "Connects Paro and Thimphu, high mountain passes, alpine lakes, prayer flags, local wildlife",
       accommodation: "Camping along trek; some lodges in remote points",
-      icon: "👣",
     },
     {
       id: 3,
@@ -35,7 +52,6 @@ const TreksPage = () => {
       highlights:
         "Views of Mount Jomolhari, yak herding villages, glaciers, sacred lakes",
       accommodation: "Tented camps and mountain lodges",
-      icon: "🏔️",
     },
     {
       id: 4,
@@ -46,7 +62,6 @@ const TreksPage = () => {
       highlights:
         "Remote high Himalayas, 11 mountain passes, glaciers, rare flora and fauna",
       accommodation: "Tented camps only (very basic, self-contained)",
-      icon: "❄️",
     },
     {
       id: 5,
@@ -57,7 +72,6 @@ const TreksPage = () => {
       highlights:
         "Temples, monasteries, scenic valleys, sacred lakes, traditional villages",
       accommodation: "Guesthouses, homestays, or small lodges",
-      icon: "🏯",
     },
     {
       id: 6,
@@ -68,13 +82,12 @@ const TreksPage = () => {
       highlights:
         "Tibetan-influenced villages, hot springs, panoramic Himalayan views",
       accommodation: "Tented camps, basic mountain lodges",
-      icon: "🏕️",
     },
   ];
 
   return (
     <>
-      <Navbar />
+      <Navbar isScrolled={isScrolled} />
       <div className="bg-white min-h-screen">
         {/* Hero Header */}
         <header className="py-16 px-6 text-center bg-gradient-to-b from-gray-50 to-white">
@@ -101,7 +114,6 @@ const TreksPage = () => {
               >
                 <div className="p-8">
                   <div className="flex justify-between items-start mb-6">
-                    <span className="text-4xl">{trek.icon}</span>
                     <span
                       className={`px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest ${
                         trek.difficulty.includes("Challenging")
@@ -175,7 +187,7 @@ const TreksPage = () => {
                     key={i}
                     className="flex items-start gap-4 bg-white/5 p-6 rounded-2xl backdrop-blur-sm"
                   >
-                    <span className="text-xl">🏔️</span>
+                    <span className="text-xl"></span>
                     <p className="text-lg text-green-50">{tip.text}</p>
                   </div>
                 ))}

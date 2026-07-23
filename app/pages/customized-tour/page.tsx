@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/app/components/navbar";
 import { sendEmail } from "@/app/action";
 import Footer from "@/app/components/footer";
@@ -65,9 +65,26 @@ const BookingForm = () => {
     );
   }
 
+  const [isScrolled, setIsScrolled] = useState(false);
+       useEffect(() => {
+        const handleScroll = () => {
+          // Check if user has scrolled more than 50px
+          const scrollPosition = window.scrollY;
+          setIsScrolled(scrollPosition > 50);
+        };
+    
+        // Add scroll event listener
+        window.addEventListener("scroll", handleScroll);
+    
+        // Clean up event listener
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+
   return (
     <>
-      <Navbar />
+      <Navbar isScrolled={isScrolled}/>
       <section className="max-w-4xl mx-auto p-8 bg-white dark:bg-white shadow-2xl rounded-3xl border border-slate-100 my-12">
         <div className="mb-8 border-b pb-6">
           <h2 className="text-3xl font-bold text-slate-900">
