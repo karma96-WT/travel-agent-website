@@ -1,20 +1,42 @@
+'use client'
 import Image from "next/image";
 import Navbar from "./components/navbar";
 import "./local.css";
 import { CheckCircle2, Link } from "lucide-react";
 import Footer from "./components/footer";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+   const [isScrolled, setIsScrolled] = useState(false);
+   useEffect(() => {
+    const handleScroll = () => {
+      // Check if user has scrolled more than 50px
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
-      <Navbar />
       <div className="home-page-div">
-        <div className="home-page-image-div">
-          <img
-            src="/Home-page-image.png"
-            alt="Home Page Image"
-            className="home-page-image h-64 w-64 rounded-xl shadow-lg transition-all duration-500 ease-in-out hover:-translate-y-4 hover:shadow-2xl hover:brightness-110"
-          />
+        <Navbar isScrolled={isScrolled} />
+        <div className="relative min-h-screen bg-[url('./New Web Logo.png')] bg-cover bg-center">
+          <div className="home-page-div"> 
+            <div className="home-page-image-div">
+              <img
+                src="/New Web Logo.png"
+                alt="Home Page Image"
+                className="home-page-image shadow-lg transition-all duration-500 ease-in-out"
+              />
+            </div>
+          </div>
         </div>
         <div className="Taktsang-image-div">
           <div className="text-overlay">

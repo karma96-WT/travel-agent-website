@@ -3,7 +3,7 @@
   display: block;
   justify-content: center; /* Centers horizontally */
   align-items: center;     /* Centers vertically */
-  padding: 40px 0;         /* Adds space above and below the logo */
+        /* Adds space above and below the logo */
   background-color: #fff;  /* Keeps the background clean */
 }
 .home-page-image-div{
@@ -13,9 +13,9 @@
     align-items: center;
 }
 .home-page-image {
-  height: 70vh;           /* Control the "shortness" here */
-  width: 85vw;             /* This prevents the "stretched" look */
-  max-width: 90%;          /* Ensures it doesn't touch screen edges on mobile */
+  top: 0;
+  height: 100vh;           /* Control the "shortness" here */
+  width: 100%;             /* This prevents the "stretched" look *       /* Ensures it doesn't touch screen edges on mobile */
   object-fit: fill; 
   justify-content: center;
   align-items: center;    /* Ensures the whole logo is visible, not cropped */

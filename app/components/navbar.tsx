@@ -4,7 +4,11 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Importing usePathname to determine the current route for active link styling
 
-const Navbar = () => {
+interface NavbarProps {
+  isScrolled: boolean;  // Explicitly type it as boolean
+}
+
+export default function Navbar({ isScrolled }:  NavbarProps) {
   const pathname = usePathname(); // Get the current URL path
   const scrollRef = useRef<HTMLUListElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -44,12 +48,20 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-white shadow-md relative w-full sticky top-0 z-50">
+    <nav
+      className={`bg-transparent w-full fixed top-0 z-500 ${
+        isScrolled ? "bg-white/80 backdrop-blur-lg shadow-lg" : "bg-transparent"
+      }`}
+    >
       <div className="flex items-center justify-around px-6 py-4">
         {/* Logo Section */}
         <div className="text-2xl font-bold text-blue-600 flex-shrink-0">
           <Link href="/">
-            <img src="/Logo.jpg" alt="Logo" className="h-20 w-20" />
+            <img
+              src="/Circle logo.png"
+              alt="Logo"
+              className="h-20 w-20 rounded-full"
+            />
           </Link>
         </div>
 
@@ -132,6 +144,4 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
