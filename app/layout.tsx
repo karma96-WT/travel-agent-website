@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/icon.jpg",
+    icon: "/Circle Logo.png",
   },
   title: "Bhutan Happiness Tours and Treks",
   description:
