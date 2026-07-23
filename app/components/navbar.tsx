@@ -5,10 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation"; // Importing usePathname to determine the current route for active link styling
 
 interface NavbarProps {
-  isScrolled: boolean;  // Explicitly type it as boolean
+  isScrolled: boolean; // Explicitly type it as boolean
 }
 
-export default function Navbar({ isScrolled }:  NavbarProps) {
+export default function Navbar({ isScrolled }: NavbarProps) {
   const pathname = usePathname(); // Get the current URL path
   const scrollRef = useRef<HTMLUListElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -58,7 +58,7 @@ export default function Navbar({ isScrolled }:  NavbarProps) {
         <div className="text-2xl font-bold text-blue-600 flex-shrink-0">
           <Link href="/">
             <img
-              src="/Circle logo.png"
+              src="/Circle Logo.png"
               alt="Logo"
               className="h-20 w-20 rounded-full"
             />
