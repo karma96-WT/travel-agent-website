@@ -105,7 +105,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
                 href="/pages/treckking"
                 className={getLinkClassName("/pages/treckking")}
               >
-                TREKKINGS
+                TRAVEL INFORMATION
               </Link>
             </li>
             <li>

@@ -1,73 +1,259 @@
 .home-page-div {
   width: 100%;
   display: block;
-  justify-content: center; /* Centers horizontally */
-  align-items: center;     /* Centers vertically */
-        /* Adds space above and below the logo */
-  background-color: #fff;  /* Keeps the background clean */
+  background-color: #fff;
 }
-.home-page-image-div{
-    display: flex;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
+
+/* Hero Container */
+.hero-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
-.home-page-image {
-  top: 0;
-  height: 100vh;           /* Control the "shortness" here */
-  width: 100%;             /* This prevents the "stretched" look *       /* Ensures it doesn't touch screen edges on mobile */
-  object-fit: fill; 
+
+.home-page-image-div {
+  display: flex;
+  padding: 0;
   justify-content: center;
-  align-items: center;    /* Ensures the whole logo is visible, not cropped */
+  align-items: center;
+  width: 100%;
+  height: 150vh;
+  overflow: hidden;
+}
+
+.home-page-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero Text Overlay - on Buddha Image */
+.hero-text-overlay {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  z-index: 20;
+  padding: 1.5rem 2rem;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  border-left: 4px solid #f59e0b;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-quote {
+  font-size: clamp(16px, 3vw, 36px);
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.hero-sub-text {
+  font-size: clamp(14px, 2vw, 24px);
+  font-weight: 400;
+  color: #fcd34d;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-page-image-div {
+    height: 70vh;
+  }
+  
+  .hero-text-overlay {
+    bottom: 12%;
+    padding: 1.25rem 1.75rem;
+  }
+  
+  .hero-quote {
+    font-size: clamp(18px, 2.8vw, 28px);
+  }
+  
+  .hero-sub-text {
+    font-size: clamp(16px, 2vw, 20px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-page-image-div {
+    height: 40vh;
+    min-height: 250px;
+    max-height: 50vh;
+  }
+  
+  .home-page-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .hero-text-overlay {
+    bottom: 10%;
+    width: 92%;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+  }
+  
+  .hero-quote {
+    font-size: clamp(14px, 2.5vw, 18px);
+  }
+  
+  .hero-sub-text {
+    font-size: clamp(12px, 2vw, 16px);
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .hero-text-overlay {
+    bottom: 8%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+  }
+  
+  .hero-quote {
+    font-size: clamp(12px, 2vw, 14px);
+  }
+  
+  .hero-sub-text {
+    font-size: clamp(10px, 1.8vw, 12px);
+  }
 }
 
 .Taktsang-image-div {
-background-image: url('/Taktshang.png');
-min-height: 500px;  /* Force the div to be at least 500px tall */
+  background-image: url('/Taktshang.png');
+  min-height: 500px;
   height: 70vh;
-    /* Critical settings for a "Cool" UI */
-  background-size: cover;      /* Scales image to fill the div */
-  background-position: center; /* Keeps the temple centered */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
   width: 100%;
-  overflow: hidden; /* Keeps text from leaking out */
+  overflow: hidden;
 }
-.Taktshang-image{     /* Control the "shortness" here */
-    width: 100%; 
-    height: 85vh;            /* This prevents the "stretched" look */
-    max-width: 90%;          /* Ensures it doesn't touch screen edges on mobile */
-    object-fit: fill; 
-    justify-content: center;
-    align-items: center;    /* Ensures the whole logo is visible, not cropped */
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .Taktsang-image-div {
+    height: 60vh;
+    min-height: 400px;
+  }
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .Taktsang-image-div {
+    height: 50vh;
+    min-height: 300px;
+  }
+}
+
+.Taktshang-image {
+  width: 100%;
+  height: 85vh;
+  max-width: 90%;
+  object-fit: fill;
+  justify-content: center;
+  align-items: center;
+}
+
 .text-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%; /* Give it some breathing room on the sides */
+  width: 90%;
   text-align: center;
   color: white;
   z-index: 10;
-  /* Add a slight dark background to help readability as text gets smaller */
-  background: rgba(0, 0, 0, 0.2); 
+  background: rgba(0, 0, 0, 0.2);
   padding: 1rem;
   border-radius: 8px;
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+  .text-overlay {
+    width: 95%;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
 .text-overlay p {
-  /* This is the magic line: */
-  /* It says: font stays between 12px and 24px, but scales at 2% of viewport width */
-  font-size: clamp(12px, 2vw, 24px); 
+  font-size: clamp(12px, 2vw, 24px);
   line-height: 1.4;
   margin-bottom: 0.5rem;
 }
-/* Specific style for your Bold Span inside the overlay */
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .text-overlay p {
+    font-size: clamp(14px, 1.8vw, 20px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .text-overlay p {
+    font-size: clamp(10px, 2.5vw, 14px);
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+  }
+}
+
 .text-overlay span {
   font-size: clamp(14px, 2.5vw, 28px);
 }
-.home-page-image-style{
-    width: 400px;
-    height: 300px;
+
+/* Mobile */
+@media (max-width: 768px) {
+  .text-overlay span {
+    font-size: clamp(12px, 2.8vw, 16px);
+  }
+}
+
+.home-page-image-style {
+  width: 400px;
+  height: 300px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-page-image-style {
+    width: 200px;
+    height: 150px;
+  }
+}
+
+/* No scrollbar for horizontal scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
