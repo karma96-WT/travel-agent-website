@@ -25,6 +25,7 @@ const GalleryPage = () => {
   return (
     <div className="bg-white">
       <Navbar isScrolled={isScrolled} />
+      <div className="h-20 bg-white"></div>
       <div className="max-w-6xl mx-auto px-4 py-12 font-sans text-slate-800 pt-20">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-900  leading-tight text-center">
           Explore Our Gallery

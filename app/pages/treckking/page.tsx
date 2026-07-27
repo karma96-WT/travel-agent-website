@@ -88,6 +88,7 @@ const TreksPage = () => {
   return (
     <>
       <Navbar isScrolled={isScrolled} />
+      <div className="h-20 bg-white"></div>
       <div className="bg-white min-h-screen">
         {/* Hero Header */}
         <header className="py-16 px-6 text-center bg-gradient-to-b from-gray-50 to-white">
