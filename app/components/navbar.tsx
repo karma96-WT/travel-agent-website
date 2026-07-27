@@ -13,6 +13,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
   const scrollRef = useRef<HTMLUListElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Function to check if scrolling is possible in either direction
   const checkScroll = () => {
@@ -34,6 +35,15 @@ export default function Navbar({ isScrolled }: NavbarProps) {
     }`;
   };
 
+  const getMobileLinkClassName = (href: string) => {
+    const isActive = pathname === href;
+    return `transition block w-full px-4 py-3 rounded-md ${
+      isActive
+        ? "text-green-600 font-bold border-l-4 border-green-900 bg-green-50" // Active Styles
+        : "text-gray-700 hover:text-green-500 hover:bg-gray-50" // Inactive Styles
+    }`;
+  };
+
   useEffect(() => {
     const el = scrollRef.current;
     if (el) {
@@ -46,6 +56,23 @@ export default function Navbar({ isScrolled }: NavbarProps) {
       };
     }
   }, []);
+
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
 
   return (
     <nav
@@ -65,11 +92,11 @@ export default function Navbar({ isScrolled }: NavbarProps) {
           </Link>
         </div>
 
-        {/* Navigation Container with Arrows */}
-        <div className="relative flex items-center overflow-hidden max-w-full ml-4">
+        {/* Desktop Navigation Container with Arrows */}
+        <div className="relative hidden md:flex items-center overflow-hidden max-w-full ml-4">
           {/* Left Arrow Icon */}
           {showLeftArrow && (
-            <div className="absolute left-0 z-10 bg-gradient-to-r from-white via-white to-transparent pr-4 pointer-events-none md:hidden">
+            <div className="absolute left-0 z-10 bg-gradient-to-r from-white via-white to-transparent pr-4 pointer-events-none">
               <span className="text-green-900 font-bold justify-center">←</span>
             </div>
           )}
@@ -77,7 +104,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
           {/* Scrollable List */}
           <ul
             ref={scrollRef}
-            className="flex overflow-x-auto no-scrollbar space-x-6 py-2 text-sm font-medium text-gray-700 md:overflow-visible scroll-smooth"
+            className="flex overflow-x-auto no-scrollbar space-x-6 py-2 text-sm font-medium text-gray-700 overflow-visible scroll-smooth"
           >
             <li>
               <Link href="/" className={getLinkClassName("/")}>
@@ -136,12 +163,111 @@ export default function Navbar({ isScrolled }: NavbarProps) {
 
           {/* Right Arrow Icon */}
           {showRightArrow && (
-            <div className="absolute right-0 z-10 bg-gradient-to-l from-white via-white to-transparent pl-4 pointer-events-none md:hidden">
+            <div className="absolute right-0 z-10 bg-gradient-to-l from-white via-white to-transparent pl-4 pointer-events-none">
               <span className="text-green-900 font-bold">→</span>
             </div>
           )}
         </div>
+
+        {/* Hamburger Menu Button - Mobile */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <div className="relative w-6 h-5">
+            <span
+              className={`absolute block w-full h-0.5 bg-gray-700 rounded transition-all duration-300 ${
+                isMenuOpen ? "rotate-45 top-2" : "top-0"
+              }`}
+            />
+            <span
+              className={`absolute block w-full h-0.5 bg-gray-700 rounded transition-all duration-300 ${
+                isMenuOpen ? "opacity-0" : "top-2"
+              }`}
+            />
+            <span
+              className={`absolute block w-full h-0.5 bg-gray-700 rounded transition-all duration-300 ${
+                isMenuOpen ? "-rotate-45 top-2" : "top-4"
+              }`}
+            />
+          </div>
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden fixed top-0 left-0 right-0 bg-white shadow-xl z-40 transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? "translate-y-0" : "-translate-y-full"
+        }`}
+        style={{ top: 0 }}
+      >
+        <div className="pt-20 pb-6 px-4 h-screen overflow-y-auto">
+          <ul className="flex flex-col space-y-1 text-sm font-medium">
+            <li>
+              <Link href="/" className={getMobileLinkClassName("/")}>
+                HOME
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/pages/aboutus"
+                className={getMobileLinkClassName("/pages/aboutus")}
+              >
+                ABOUT US
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/pages/tours"
+                className={getMobileLinkClassName("/pages/tours")}
+              >
+                TOURS
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/pages/treckking"
+                className={getMobileLinkClassName("/pages/treckking")}
+              >
+                TRAVEL INFORMATION
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/pages/customized-tour"
+                className={getMobileLinkClassName("/pages/customized-tour")}
+              >
+                CUSTOMIZE TOURS
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/pages/gallery"
+                className={getMobileLinkClassName("/pages/gallery")}
+              >
+                GALLERY
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/pages/blogs"
+                className={getMobileLinkClassName("/pages/blogs")}
+              >
+                BLOGS
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Overlay */}
+      {isMenuOpen && (
+        <div
+          className="md:hidden fixed inset-0 bg-black/50 z-30"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
     </nav>
   );
 }
