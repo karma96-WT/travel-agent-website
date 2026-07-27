@@ -44,6 +44,7 @@ const AboutPage = () => {
   return (
     <>
       <Navbar isScrolled={isScrolled} />
+       <div className="h-20 bg-white"></div>
       <div className="bg-white text-gray-800">
         {/* 1. Hero Section: CEO & Introduction */}
         <section className="relative py-16 lg:py-24 px-6 max-w-7xl mx-auto">

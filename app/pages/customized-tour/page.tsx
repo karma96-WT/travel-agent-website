@@ -46,7 +46,7 @@ const BookingForm = () => {
 
   if (status === "success") {
     return (
-      <div className="bg-green-50 border border-green-200 p-10 rounded-3xl text-center max-w-2xl mx-auto my-12">
+      <div className="bg-white border border-green-200 p-10 rounded-3xl text-center max-w-2xl mx-auto my-12">
         <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
           <Send size={32} />
         </div>
@@ -66,26 +66,28 @@ const BookingForm = () => {
   }
 
   const [isScrolled, setIsScrolled] = useState(false);
-       useEffect(() => {
-        const handleScroll = () => {
-          // Check if user has scrolled more than 50px
-          const scrollPosition = window.scrollY;
-          setIsScrolled(scrollPosition > 50);
-        };
-    
-        // Add scroll event listener
-        window.addEventListener("scroll", handleScroll);
-    
-        // Clean up event listener
-        return () => {
-          window.removeEventListener("scroll", handleScroll);
-        };
-      }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if user has scrolled more than 50px
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <>
-      <Navbar isScrolled={isScrolled}/>
-      <section className="max-w-4xl mx-auto p-8 bg-white dark:bg-white shadow-2xl rounded-3xl border border-slate-100 my-12">
+    <div className="bg-white">
+      <Navbar isScrolled={isScrolled} />
+      <div className="h-20 bg-white">
+      </div>
+      <section className="max-w-4xl mx-auto p-8 bg-white dark:bg-white shadow-2xl rounded-3xl border border-slate-100">
         <div className="mb-8 border-b pb-6">
           <h2 className="text-3xl font-bold text-slate-900">
             Customize Your Bhutan Dream Trip
@@ -270,7 +272,7 @@ const BookingForm = () => {
         </form>
       </section>
       <Footer />
-    </>
+    </div>
   );
 };
 

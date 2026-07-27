@@ -7,26 +7,26 @@ import { useEffect, useState } from "react";
 
 const GalleryPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-       useEffect(() => {
-        const handleScroll = () => {
-          // Check if user has scrolled more than 50px
-          const scrollPosition = window.scrollY;
-          setIsScrolled(scrollPosition > 50);
-        };
-    
-        // Add scroll event listener
-        window.addEventListener("scroll", handleScroll);
-    
-        // Clean up event listener
-        return () => {
-          window.removeEventListener("scroll", handleScroll);
-        };
-      }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if user has scrolled more than 50px
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <>
-      <Navbar isScrolled={isScrolled}/>
+    <div className="bg-white">
+      <Navbar isScrolled={isScrolled} />
       <div className="max-w-6xl mx-auto px-4 py-12 font-sans text-slate-800 pt-20">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-slate-100 leading-tight text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-green-900  leading-tight text-center">
           Explore Our Gallery
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed text-center mb-12">
@@ -125,7 +125,7 @@ const GalleryPage = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 export default GalleryPage;
