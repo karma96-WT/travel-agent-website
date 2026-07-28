@@ -4,11 +4,25 @@ const Footer = () => {
   return (
     <>
       <section className="px-4 py-8 max-w-6xl mx-auto">
-        <div className="bg-white border-2 border-gray-100 shadow-sm rounded-[2rem] p-6 md:p-10">
+        <div className="bg-white border-2 border-gray-100 shadow-sm rounded-[2rem] p-6 md:p-10 flex flex-row justify-around">
+          <div className="text-black flex flex-col gap-4 text-blue-800">
+            <h1 className="text-xl md:text-2xl font-bold text-gray-800 tracking-tight">
+              IMPORTANT LINKS
+            </h1>
+            <a href="https://www.mfa.gov.bt/tourism/">Department of Tourism</a>
+            <a href="https://drukair.com.bt/">
+              Drukair – Royal Bhutan Airlines
+            </a>
+            <a href="https://www.bhutanairlines.bt/">Bhutan Airlines</a>
+            <a href="https://www.doi.gov.bt/">
+              Department of Immigration, Bhutan
+            </a>
+          </div>
+
           {/* Main Wrapper: flex-row ensures they stay side-by-side even on tiny screens */}
-          <div className="flex flex-row flex-wrap justify-around items-start gap-y-8 md:gap-y-0">
+          <div className="flex flex-col flex-wrap justify-around items-start gap-y-8 md:gap-y-0">
             {/* LEFT: Contact Section */}
-            <div className="flex flex-col items-center md:items-start space-y-4 w-1/2 md:w-auto">
+            <div className="flex flex-col items-center space-y-4 w-1/2 md:w-auto">
               <h2 className="text-xl md:text-2xl font-bold text-gray-800 tracking-tight">
                 CONTACT US
               </h2>

@@ -85,435 +85,415 @@ export default function Home() {
             <div className="w-20 h-1 bg-[#063b1a] mt-4 rounded-full" />
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-            <div className="lg:w-1/3">
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 leading-snug">
-                Pristine Natural <br className="hidden md:block" /> Beauty
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                Experience untouched Himalayan landscapes, fresh mountain air,
-                and breathtaking scenery preserved in its purest form.
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
+            {/* Image Section - Fixed height 500px */}
+            <div className="lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden">
+              <img
+                src="Prestine Natural Beauty.jpg"
+                alt="Pristine Natural Beauty Photo"
+                className="w-full h-[500px] object-cover rounded-2xl border-black"
+              />
+            </div>
+
+            {/* Text Section - Will only be as tall as its content */}
+            <div className="lg:w-[45%] border-2 border-black rounded-2xl p-5 flex flex-col">
+              <h1 className="text-center font-bold text-green-900 text-3xl mb-3 border-b-2 border-green-200 pb-2">
+                Prestine Natural Beauty
+              </h1>
+              <p className="text-green-900 text-sm leading-relaxed">
+                Bhutan, the Land of the Thunder Dragon nestled in the eastern
+                Himalayas, epitomizes pristine natural beauty with its
+                snow-capped peaks soaring dramatically against clear blue skies,
+                lush emerald valleys carved by ancient glaciers, and dense
+                forests blanketing over 70% of its land, preserved through a
+                constitutional mandate requiring at least 60% forest cover. This
+                untouched kingdom harbors extraordinary biodiversity across
+                diverse ecosystems—from subtropical lowlands to high alpine
+                zones—protecting rare species like the elusive snow leopard, the
+                unique national animal takin, playful red pandas, majestic
+                tigers, and iconic black-necked cranes, all thriving in vast
+                protected areas that span more than half the country, where
+                crystal-clear rivers, glacial lakes, and vibrant
+                rhododendron-filled woodlands create a profound sense of harmony
+                and purity. Iconic landmarks such as the breathtaking Taktsang
+                Monastery (Tiger&#39;s Nest), dramatically perched on sheer
+                cliffs amid misty forests, perfectly blend spiritual heritage
+                with majestic landscapes of terraced rice fields, traditional
+                farmhouses, and serene trails, offering visitors a rare,
+                restorative experience of living in balance with nature&#39;s
+                timeless splendor.
               </p>
             </div>
-
-            <div className="lg:w-2/3">
-              <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-4 sm:gap-6 pb-6 md:grid md:grid-cols-3 md:overflow-visible">
-                {["/Prestine1.png", "/Prestine2.png", "/Prestine3.png"].map(
-                  (src, index) => (
-                    <div
-                      key={index}
-                      className="min-w-[80%] sm:min-w-[85%] md:min-w-full snap-center group"
-                    >
-                      <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                        <img
-                          src={src}
-                          alt="Bhutan Landscape"
-                          className="w-full h-[250px] sm:h-[300px] md:h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                      </div>
-                    </div>
-                  ),
-                )}
-              </div>
-              <p className="text-xs text-gray-400 mt-2 md:hidden italic">
-                Swipe to explore →
-              </p>
-            </div>
           </div>
         </section>
 
-        <div style={{ height: "8vh", width: "100%" }} className="bg-white" />
-
-        {/* Living Spiritual Heritage Section */}
-        <section className="px-4 sm:px-6 py-8 sm:py-12 max-w-7xl mx-auto bg-white">
-          <div className="relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-gradient-to-br from-white to-gray-50 p-6 sm:p-8 md:p-12 border border-gray-100 shadow-sm">
-            <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-10">
-              <div className="lg:w-1/3 z-10">
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                  <span className="w-2 h-8 bg-orange-400 rounded-full inline-block"></span>
-                  Living Spiritual Heritage
-                </h2>
-                <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                  Discover a deeply rooted culture where ancient traditions,
-                  sacred rituals, and peaceful values shape everyday life.
-                </p>
-                <p className="mt-4 sm:mt-6 text-[#063b1a] italic font-medium border-l-2 border-[#063b1a]/20 pl-4 text-sm sm:text-base">
-                  "Where every breath is a prayer and every mountain is sacred."
-                </p>
-              </div>
-
-              <div className="lg:w-2/3">
-                <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-4 sm:gap-6 pb-6 md:grid md:grid-cols-3 md:overflow-visible">
-                  {["/Spirit1.png", "/Spirit2.png", "/Spirit3.png"].map(
-                    (src, index) => (
-                      <div
-                        key={index}
-                        className="min-w-[80%] sm:min-w-[85%] md:min-w-full snap-center group"
-                      >
-                        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                          <img
-                            src={src}
-                            alt="Bhutan Landscape"
-                            className="w-full h-[250px] sm:h-[300px] md:h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                        </div>
-                      </div>
-                    ),
-                  )}
-                </div>
-                <p className="text-xs text-gray-400 mt-2 md:hidden italic">
-                  Swipe to explore →
-                </p>
-              </div>
-              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#063b1a]/5 rounded-full blur-3xl" />
-            </div>
+        {/* Gross National Section */}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center p-6 z-20 mt-[-100px]">
+          {/* Text Section - Will only be as tall as its content */}
+          <div className="lg:w-[45%] border-2 border-black rounded-2xl p-5 flex flex-col relative bg-white shadow-xl">
+            <h1 className="text-center font-bold text-green-900 text-3xl mb-3 border-b-2 border-green-200 pb-2">
+              Gross National Happiness
+            </h1>
+            <p className="text-green-900 text-sm leading-relaxed">
+              Gross National Happiness (GNH) is Bhutan&#39;s unique guiding
+              philosophy for development, introduced in the early 1970s by the
+              Fourth King, Jigme Singye Wangchuck, who famously declared that
+              Gross National Happiness is more important than Gross Domestic
+              Product. Instead of prioritizing economic growth alone, GNH
+              promotes holistic well-being by balancing material progress with
+              spiritual, cultural, and environmental values, rooted in Buddhist
+              principles and the idea that the government&#39;s purpose is to
+              foster citizens&#39; happiness. It rests on *four pillars*:
+              sustainable and equitable socio-economic development, preservation
+              and promotion of culture, conservation of the environment (with
+              Bhutan maintaining over 60% forest cover as constitutionally
+              mandated), and good governance. These pillars expand into nine
+              domains—including psychological well-being, health, education,
+              community vitality, and ecological resilience—measured through the
+              GNH Index by the Centre for Bhutan &amp; GNH Studies, which guides
+              policies to enhance collective happiness and sustainability rather
+              than individual wealth.
+            </p>
           </div>
-        </section>
-
-        <div style={{ height: "8vh", width: "100%" }} className="bg-white" />
-
-        {/* Vibrant Cultural Festivals Section */}
-        <section className="px-4 sm:px-6 py-8 sm:py-12 max-w-7xl mx-auto bg-white">
-          <div className="relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-gradient-to-br from-white to-gray-50 p-6 sm:p-8 md:p-12 border border-gray-100 shadow-sm">
-            <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-10">
-              <div className="lg:w-1/3 z-10">
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                  <span className="w-2 h-8 bg-orange-400 rounded-full inline-block"></span>
-                  Vibrant Cultural Festivals
-                </h2>
-                <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                  Witness colorful celebrations filled with traditional music,
-                  masked dances, and joyful community spirit
-                </p>
-              </div>
-
-              <div className="lg:w-2/3">
-                <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-4 sm:gap-6 pb-6 md:grid md:grid-cols-3 md:overflow-visible">
-                  {["/Culture1.png", "/Culture2.png", "/Culture3.png"].map(
-                    (src, index) => (
-                      <div
-                        key={index}
-                        className="min-w-[80%] sm:min-w-[85%] md:min-w-full snap-center group"
-                      >
-                        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                          <img
-                            src={src}
-                            alt="Bhutan Landscape"
-                            className="w-full h-[250px] sm:h-[300px] md:h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                        </div>
-                      </div>
-                    ),
-                  )}
-                </div>
-                <p className="text-xs text-gray-400 mt-2 md:hidden italic">
-                  Swipe to explore →
-                </p>
-              </div>
-              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#063b1a]/5 rounded-full blur-3xl" />
-            </div>
+          {/* Image Section - Fixed height 500px */}
+          <div className="lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden">
+            <img
+              src="GNH.jpg"
+              alt="GNH Photo"
+              className="w-full h-[500px] object-cover rounded-2xl border-black"
+            />
           </div>
-        </section>
+        </div>
 
-        <div style={{ height: "8vh", width: "100%" }} className="bg-white" />
-
-        {/* Safe & Peaceful Destination Section */}
-        <section className="px-4 sm:px-6 py-8 sm:py-12 max-w-7xl mx-auto bg-white">
-          <div className="relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-gradient-to-br from-white to-gray-50 p-6 sm:p-8 md:p-12 border border-gray-100 shadow-sm">
-            <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-10">
-              <div className="lg:w-1/3 z-10">
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                  <span className="w-2 h-8 bg-orange-400 rounded-full inline-block"></span>
-                  Safe & Peaceful Destination
-                </h2>
-                <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                  Travel with confidence in one of the world's most serene and
-                  welcoming environments.
-                </p>
-              </div>
-
-              <div className="lg:w-2/3">
-                <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-4 sm:gap-6 pb-6 md:grid md:grid-cols-3 md:overflow-visible">
-                  {["/Safe1.png", "/Safe2.png", "/Safe3.png"].map(
-                    (src, index) => (
-                      <div
-                        key={index}
-                        className="min-w-[80%] sm:min-w-[85%] md:min-w-full snap-center group"
-                      >
-                        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                          <img
-                            src={src}
-                            alt="Bhutan Landscape"
-                            className="w-full h-[250px] sm:h-[300px] md:h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                        </div>
-                      </div>
-                    ),
-                  )}
-                </div>
-                <p className="text-xs text-gray-400 mt-2 md:hidden italic">
-                  Swipe to explore →
-                </p>
-              </div>
-              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#063b1a]/5 rounded-full blur-3xl" />
-            </div>
+        {/* Sustainable and resposnible tourism */}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center p-6 z-20 mt-[-75px]">
+          {/* Image Section - Fixed height 500px */}
+          <div className="lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden">
+            <img
+              src="Sustainable and....jpg"
+              alt="Sustainable and Responsible Tourism Photo"
+              className="w-full h-[500px] object-cover rounded-2xl border-black"
+            />
           </div>
-        </section>
-
-        <div style={{ height: "8vh", width: "100%" }} className="bg-white" />
-
-        {/* Sustainable & Responsible Tourism Section */}
-        <section className="px-4 sm:px-6 py-8 sm:py-12 max-w-7xl mx-auto bg-white">
-          <div className="relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-gradient-to-br from-white to-gray-50 p-6 sm:p-8 md:p-12 border border-gray-100 shadow-sm">
-            <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-10">
-              <div className="lg:w-1/3 z-10">
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                  <span className="w-2 h-8 bg-orange-400 rounded-full inline-block"></span>
-                  Sustainable & Responsible Tourism
-                </h2>
-                <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                  Explore a nation committed to environmental protection and
-                  mindful travel experiences.
-                </p>
-              </div>
-
-              <div className="lg:w-2/3">
-                <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-4 sm:gap-6 pb-6 md:grid md:grid-cols-3 md:overflow-visible">
-                  {["/Sustain1.png", "/Sustain2.png", "/Sustain3.png"].map(
-                    (src, index) => (
-                      <div
-                        key={index}
-                        className="min-w-[80%] sm:min-w-[85%] md:min-w-full snap-center group"
-                      >
-                        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                          <img
-                            src={src}
-                            alt="Bhutan Landscape"
-                            className="w-full h-[250px] sm:h-[300px] md:h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                        </div>
-                      </div>
-                    ),
-                  )}
-                </div>
-                <p className="text-xs text-gray-400 mt-2 md:hidden italic">
-                  Swipe to explore →
-                </p>
-              </div>
-              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#063b1a]/5 rounded-full blur-3xl" />
-            </div>
+          {/* Text Section - Will only be as tall as its content */}
+          <div className="lg:w-[45%] border-2 border-black rounded-2xl p-5 flex flex-col relative bg-white shadow-xl">
+            <h1 className="text-center font-bold text-green-900 text-3xl mb-3 border-b-2 border-green-200 pb-2">
+              Sustainable and Responsible Tourism
+            </h1>
+            <p className="text-green-900 text-sm leading-relaxed">
+              Bhutan pioneered sustainable and responsible tourism through its
+              renowned *&quot;High Value, Low Impact&quot;* (sometimes phrased
+              as High Value, Low Volume) policy, introduced since the 1970s and
+              guided by the principle of Gross National Happiness. This approach
+              prioritizes quality over quantity by limiting visitor numbers to
+              protect the kingdom&#39;s pristine environment, rich cultural
+              heritage, and social fabric while generating meaningful economic
+              benefits. All international tourists pay a daily *Sustainable
+              Development Fee (SDF)* of USD 100 per person (currently discounted
+              until 2027), which funds conservation, infrastructure, cultural
+              preservation, and community development. Visitors must travel with
+              licensed operators, ensuring guided, low-impact experiences that
+              foster authentic engagement rather than mass tourism. This model
+              has earned global acclaim for successfully balancing tourism with
+              long-term sustainability.
+            </p>
           </div>
-        </section>
+        </div>
 
-        <div style={{ height: "8vh", width: "100%" }} className="bg-white" />
-
-        {/* Exclusive Travel Experience Section */}
-        <section className="px-4 sm:px-6 py-8 sm:py-12 max-w-7xl mx-auto bg-white">
-          <div className="relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-gradient-to-br from-white to-gray-50 p-6 sm:p-8 md:p-12 border border-gray-100 shadow-sm">
-            <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-10">
-              <div className="lg:w-1/3 z-10">
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                  <span className="w-2 h-8 bg-orange-400 rounded-full inline-block"></span>
-                  Exclusive Travel Experience
-                </h2>
-                <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                  Enjoy uncrowded destinations, personalized services, and
-                  meaningful journeys crafted with care.
-                </p>
-              </div>
-
-              <div className="lg:w-2/3">
-                <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-4 sm:gap-6 pb-6 md:grid md:grid-cols-3 md:overflow-visible">
-                  {["/Travel1.png", "/Travel2.png", "/Travel3.png"].map(
-                    (src, index) => (
-                      <div
-                        key={index}
-                        className="min-w-[80%] sm:min-w-[85%] md:min-w-full snap-center group"
-                      >
-                        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                          <img
-                            src={src}
-                            alt="Bhutan Landscape"
-                            className="w-full h-[250px] sm:h-[300px] md:h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                        </div>
-                      </div>
-                    ),
-                  )}
-                </div>
-                <p className="text-xs text-gray-400 mt-2 md:hidden italic">
-                  Swipe to explore →
-                </p>
-              </div>
-              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#063b1a]/5 rounded-full blur-3xl" />
-            </div>
+        {/* Sustainable and resposnible tourism */}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center p-6 z-20 mt-[-75px]">
+          {/* Text Section - Will only be as tall as its content */}
+          <div className="lg:w-[45%] border-2 border-black rounded-2xl p-5 flex flex-col relative bg-white shadow-xl">
+            <h1 className="text-center font-bold text-green-900 text-3xl mb-3 border-b-2 border-green-200 pb-2">
+              Living Spiritual Heritage
+            </h1>
+            <p className="text-green-900 text-sm leading-relaxed">
+              Bhutan proudly preserves its living spiritual heritage, where
+              Vajrayana Buddhism—the tantric form of Mahayana Buddhism—remains
+              vibrantly alive and deeply integrated into every facet of daily
+              life, governance, art, architecture, and community. Often
+              described as a &quot;living museum of Buddhist heritage,&quot; the
+              kingdom is dotted with thousands of ancient temples, chortens
+              (stupas), meditation retreats, and majestic dzongs
+              (fortress-monasteries) that serve as both religious centers and
+              symbols of cultural continuity. Iconic sites like *Paro Taktsang*
+              (Tiger&#39;s Nest Monastery), dramatically perched on a sheer
+              cliff and revered as a sacred pilgrimage spot blessed by Guru
+              Rinpoche (Padmasambhava), embody profound spiritual power,
+              offering visitors a chance for inner purification, mindfulness,
+              and connection to enlightenment. Colorful *tshechu* festivals,
+              featuring masked dances, sacred rituals, and the unveiling of
+              giant thangkha (thongdroel), bring communities together in joyous
+              celebration of Buddhist teachings, compassion, and harmony with
+              nature. In Bhutan, spirituality is not confined to
+              monasteries—it&#39;s a guiding philosophy that prioritizes Gross
+              National Happiness, non-violence, tolerance, and respect for the
+              environment—inviting travelers to experience an authentic,
+              unbroken tradition that nurtures the soul amid the breathtaking
+              Himalayan landscapes.
+            </p>
           </div>
-        </section>
+          {/* Image Section - Fixed height 500px */}
+          <div className="lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden">
+            <img
+              src="Living heritage....jpg"
+              alt="Living Heritage Photo"
+              className="w-full h-[500px] object-cover rounded-2xl border-black"
+            />
+          </div>
+        </div>
 
         <div style={{ height: "8vh", width: "100%" }} className="bg-white" />
 
         {/* Travel Information Section */}
-        <section className="px-4 sm:px-6 py-8 sm:py-12 max-w-7xl mx-auto bg-white">
-          <div className="text-center mb-8 sm:mb-12">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-              Travel Information for Visitors to Bhutan
-              <span className="block text-base sm:text-lg md:text-xl text-[#063b1a] mt-2 font-medium bg-green-50 inline-block px-3 sm:px-4 py-1 rounded-full border border-green-100">
-                (Current Rules – 2026)
-              </span>
-            </h1>
+        {/* Tips Section */}
+        <section className="px-4 sm:px-6 py-12 sm:py-16 max-w-7xl mx-auto bg-gradient-to-b from-white to-green-50">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+              Tips for <span className="text-[#063b1a]">Visiting Bhutan</span>
+            </h2>
+            <div className="w-24 h-1 bg-[#063b1a] mx-auto mt-4 rounded-full" />
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+              Essential tips to make your Bhutan journey unforgettable
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {/* Card 1: Visa & Entry */}
-            <div className="bg-white p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-4 mb-6">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
-                  Visa & Entry
-                </h2>
+          {/* Tips Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Tip 1 */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-green-100 hover:border-green-500 group">
+              <div className="flex items-start gap-4">
+                <div className="bg-[#063b1a]/10 rounded-full p-3 group-hover:bg-[#063b1a] transition-colors duration-300 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-[#063b1a] group-hover:text-white transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-800 text-lg mb-1 group-hover:text-[#063b1a] transition-colors">
+                    Plan Your Trip Early
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Secure flights, accommodation, and permits in advance.
+                  </p>
+                </div>
               </div>
-              <ul className="space-y-3 sm:space-y-4 text-gray-600">
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  Most foreigners need visa approval before arrival.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  Indians, Bangladeshis & Maldivians need an Entry Permit (no
-                  visa).
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  Passport must be valid at least 6 months.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  Apply online via the Department of Immigration or through a
-                  tour operator.
-                </li>
-              </ul>
             </div>
 
-            {/* Card 2: SDF */}
-            <div className="bg-white p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-4 mb-6">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
-                  Sustainable Development Fee (SDF)
-                </h2>
+            {/* Tip 2 */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-green-100 hover:border-green-500 group">
+              <div className="flex items-start gap-4">
+                <div className="bg-[#063b1a]/10 rounded-full p-3 group-hover:bg-[#063b1a] transition-colors duration-300 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-[#063b1a] group-hover:text-white transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-800 text-lg mb-1 group-hover:text-[#063b1a] transition-colors">
+                    Keep Your Documents Ready
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Carry a valid passport and required travel documents.
+                  </p>
+                </div>
               </div>
-              <ul className="space-y-3 sm:space-y-4 text-gray-600">
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  International tourists: USD 100 per night.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  Indian nationals: INR 1,200 per night.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  Children discounts apply.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  SDF is separate from hotel, guide, transport, and visa fees.
-                </li>
-              </ul>
             </div>
 
-            {/* Card 3: Entry Points */}
-            <div className="bg-white p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-4 mb-6">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
-                  Entry Points
-                </h2>
+            {/* Tip 3 */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-green-100 hover:border-green-500 group">
+              <div className="flex items-start gap-4">
+                <div className="bg-[#063b1a]/10 rounded-full p-3 group-hover:bg-[#063b1a] transition-colors duration-300 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-[#063b1a] group-hover:text-white transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-800 text-lg mb-1 group-hover:text-[#063b1a] transition-colors">
+                    Prepare for High Altitude
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Stay hydrated and take time to acclimatize.
+                  </p>
+                </div>
               </div>
-              <ul className="space-y-3 sm:space-y-4 text-gray-600">
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  Main airport: Paro International Airport
-                </li>
-                <li className="flex items-start gap-3 flex-col w-full">
-                  <div className="flex items-start gap-3">
-                    <span className="text-[#063b1a] mt-1.5">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                    </span>
-                    <span>Land borders from India:</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2 ml-6 mt-2 w-full">
-                    {[
-                      "Phuentsholing",
-                      "Gelephu",
-                      "Samdrup Jongkhar",
-                      "Samtse",
-                    ].map((point) => (
-                      <span
-                        key={point}
-                        className="bg-gray-50 px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm border border-gray-200"
-                      >
-                        {point}
-                      </span>
-                    ))}
-                  </div>
-                </li>
-              </ul>
             </div>
 
-            {/* Card 4: Travel Rules */}
-            <div className="bg-white p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-4 mb-6">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
-                  Travel Rules
-                </h2>
+            {/* Tip 4 */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-green-100 hover:border-green-500 group">
+              <div className="flex items-start gap-4">
+                <div className="bg-[#063b1a]/10 rounded-full p-3 group-hover:bg-[#063b1a] transition-colors duration-300 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-[#063b1a] group-hover:text-white transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-800 text-lg mb-1 group-hover:text-[#063b1a] transition-colors">
+                    Respect Local Culture
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Dress modestly and follow local customs at religious sites.
+                  </p>
+                </div>
               </div>
-              <ul className="space-y-3 sm:space-y-4 text-gray-600">
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  Independent travel allowed.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  Licensed guide required for some restricted areas.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[#063b1a] mt-1.5">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                  </span>
-                  Popular places like Thimphu and Paro are easily accessible.
-                </li>
-              </ul>
+            </div>
+
+            {/* Tip 5 */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-green-100 hover:border-green-500 group">
+              <div className="flex items-start gap-4">
+                <div className="bg-[#063b1a]/10 rounded-full p-3 group-hover:bg-[#063b1a] transition-colors duration-300 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-[#063b1a] group-hover:text-white transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-800 text-lg mb-1 group-hover:text-[#063b1a] transition-colors">
+                    Pack Smart
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Bring warm clothing, comfortable shoes, and weather essentials.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tip 6 */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-green-100 hover:border-green-500 group">
+              <div className="flex items-start gap-4">
+                <div className="bg-[#063b1a]/10 rounded-full p-3 group-hover:bg-[#063b1a] transition-colors duration-300 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-[#063b1a] group-hover:text-white transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-800 text-lg mb-1 group-hover:text-[#063b1a] transition-colors">
+                    Experience Bhutanese Cuisine
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Try authentic local dishes and traditional drinks.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tip 7 */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-green-100 hover:border-green-500 group">
+              <div className="flex items-start gap-4">
+                <div className="bg-[#063b1a]/10 rounded-full p-3 group-hover:bg-[#063b1a] transition-colors duration-300 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-[#063b1a] group-hover:text-white transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-800 text-lg mb-1 group-hover:text-[#063b1a] transition-colors">
+                    Travel Responsibly
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Protect nature and support sustainable tourism.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tip 8 */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-green-100 hover:border-green-500 group">
+              <div className="flex items-start gap-4">
+                <div className="bg-[#063b1a]/10 rounded-full p-3 group-hover:bg-[#063b1a] transition-colors duration-300 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-[#063b1a] group-hover:text-white transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-800 text-lg mb-1 group-hover:text-[#063b1a] transition-colors">
+                    Embrace Bhutan's Happiness
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Slow down, connect with locals, and enjoy the unique culture.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-
-        <div style={{ height: "8vh", width: "100%" }} className="bg-white" />
 
         {/* Ready to Explore Section */}
         <section className="px-4 sm:px-6 py-8 sm:py-12 md:py-16 max-w-5xl mx-auto text-center bg-white">
