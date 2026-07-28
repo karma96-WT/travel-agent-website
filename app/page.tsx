@@ -158,7 +158,7 @@ export default function Home() {
           {/* Image Section - Fixed height 500px */}
           <div className="lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden">
             <img
-              src="GNH.jpg"
+              src="GNH.JPG"
               alt="GNH Photo"
               className="w-full h-[500px] object-cover rounded-2xl border-black"
             />
@@ -400,7 +400,8 @@ export default function Home() {
                     Pack Smart
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Bring warm clothing, comfortable shoes, and weather essentials.
+                    Bring warm clothing, comfortable shoes, and weather
+                    essentials.
                   </p>
                 </div>
               </div>
@@ -487,7 +488,8 @@ export default function Home() {
                     Embrace Bhutan's Happiness
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Slow down, connect with locals, and enjoy the unique culture.
+                    Slow down, connect with locals, and enjoy the unique
+                    culture.
                   </p>
                 </div>
               </div>
