@@ -76,7 +76,6 @@ export default function Home() {
 
         <div style={{ height: "10vh", width: "100%" }} className="bg-white" />
 
-        {/* Why Choose Bhutan Section */}
         <section className="px-4 sm:px-6 py-8 sm:py-12 max-w-7xl mx-auto bg-white">
           <div className="mb-8 sm:mb-10">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
@@ -86,8 +85,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
-            {/* Image Section - Fixed height 500px */}
-            <div className="lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden">
+            <div className="w-full md:w-full lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden order-1 lg:order-1">
               <img
                 src="Prestine Natural Beauty.jpg"
                 alt="Pristine Natural Beauty Photo"
@@ -95,10 +93,9 @@ export default function Home() {
               />
             </div>
 
-            {/* Text Section - Will only be as tall as its content */}
-            <div className="lg:w-[45%] border-2 border-black rounded-2xl p-5 flex flex-col">
+            <div className="w-full md:w-full lg:w-[55%] border-2 border-black rounded-2xl p-5 flex flex-col order-2 lg:order-2">
               <h1 className="text-center font-bold text-green-900 text-3xl mb-3 border-b-2 border-green-200 pb-2">
-                Prestine Natural Beauty
+                Pristine Natural Beauty
               </h1>
               <p className="text-green-900 text-sm leading-relaxed">
                 Bhutan, the Land of the Thunder Dragon nestled in the eastern
@@ -125,123 +122,119 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center p-6 z-20 mt-[-10px] md:mt-[-20px] lg:mt-[-42px]">
+            <div className="w-full md:w-full lg:w-[55%]  border-2 border-black rounded-2xl overflow-hidden order-1 lg:order-2">
+              <img
+                src="GNH.JPG"
+                alt="GNH Photo"
+                className="w-full h-[500px] object-cover rounded-2xl border-black"
+              />
+            </div>
+
+            <div className="lg:w-[45%] border-2 border-black rounded-2xl p-5 flex flex-col relative bg-white shadow-xl order-2 lg:order-1">
+              <h1 className="text-center font-bold text-green-900 text-3xl mb-3 border-b-2 border-green-200 pb-2">
+                Gross National Happiness
+              </h1>
+              <p className="text-green-900 text-sm leading-relaxed">
+                Gross National Happiness (GNH) is Bhutan&#39;s unique guiding
+                philosophy for development, introduced in the early 1970s by the
+                Fourth King, Jigme Singye Wangchuck, who famously declared that
+                Gross National Happiness is more important than Gross Domestic
+                Product. Instead of prioritizing economic growth alone, GNH
+                promotes holistic well-being by balancing material progress with
+                spiritual, cultural, and environmental values, rooted in
+                Buddhist principles and the idea that the government&#39;s
+                purpose is to foster citizens&#39; happiness. It rests on *four
+                pillars*: sustainable and equitable socio-economic development,
+                preservation and promotion of culture, conservation of the
+                environment (with Bhutan maintaining over 60% forest cover as
+                constitutionally mandated), and good governance. These pillars
+                expand into nine domains—including psychological well-being,
+                health, education, community vitality, and ecological
+                resilience—measured through the GNH Index by the Centre for
+                Bhutan &amp; GNH Studies, which guides policies to enhance
+                collective happiness and sustainability rather than individual
+                wealth.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center p-6 z-20 mt-[-10px] lg:mt-[-65px]">
+            <div className="lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden order-1 lg:order-1">
+              <img
+                src="Sustainable and....jpg"
+                alt="Sustainable and Responsible Tourism Photo"
+                className="w-full h-[500px] object-cover rounded-2xl border-black"
+              />
+            </div>
+
+            <div className="lg:w-[45%] border-2 border-black rounded-2xl p-5 flex flex-col relative bg-white shadow-xl order-2 lg:order-2">
+              <h1 className="text-center font-bold text-green-900 text-3xl mb-3 border-b-2 border-green-200 pb-2">
+                Sustainable and Responsible Tourism
+              </h1>
+              <p className="text-green-900 text-sm leading-relaxed">
+                Bhutan pioneered sustainable and responsible tourism through its
+                renowned *&quot;High Value, Low Impact&quot;* (sometimes phrased
+                as High Value, Low Volume) policy, introduced since the 1970s
+                and guided by the principle of Gross National Happiness. This
+                approach prioritizes quality over quantity by limiting visitor
+                numbers to protect the kingdom&#39;s pristine environment, rich
+                cultural heritage, and social fabric while generating meaningful
+                economic benefits. All international tourists pay a daily
+                *Sustainable Development Fee (SDF)* of USD 100 per person
+                (currently discounted until 2027), which funds conservation,
+                infrastructure, cultural preservation, and community
+                development. Visitors must travel with licensed operators,
+                ensuring guided, low-impact experiences that foster authentic
+                engagement rather than mass tourism. This model has earned
+                global acclaim for successfully balancing tourism with long-term
+                sustainability.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center p-6 z-20 mt-[-15px] lg:mt-[-70px]">
+            <div className="w-full md:w-full lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden order-1 lg:order-2">
+              <img
+                src="Living heritage....jpg"
+                alt="Living Heritage Photo"
+                className="w-full h-[500px] object-cover rounded-2xl border-black"
+              />
+            </div>
+
+            <div className="lg:w-[45%] border-2 border-black rounded-2xl p-5 flex flex-col relative bg-white shadow-xl order-2 lg:order-1">
+              <h1 className="text-center font-bold text-green-900 text-3xl mb-3 border-b-2 border-green-200 pb-2">
+                Living Spiritual Heritage
+              </h1>
+              <p className="text-green-900 text-sm leading-relaxed">
+                Bhutan proudly preserves its living spiritual heritage, where
+                Vajrayana Buddhism—the tantric form of Mahayana Buddhism—remains
+                vibrantly alive and deeply integrated into every facet of daily
+                life, governance, art, architecture, and community. Often
+                described as a &quot;living museum of Buddhist heritage,&quot;
+                the kingdom is dotted with thousands of ancient temples,
+                chortens (stupas), meditation retreats, and majestic dzongs
+                (fortress-monasteries) that serve as both religious centers and
+                symbols of cultural continuity. Iconic sites like *Paro
+                Taktsang* (Tiger&#39;s Nest Monastery), dramatically perched on
+                a sheer cliff and revered as a sacred pilgrimage spot blessed by
+                Guru Rinpoche (Padmasambhava), embody profound spiritual power,
+                offering visitors a chance for inner purification, mindfulness,
+                and connection to enlightenment. Colorful *tshechu* festivals,
+                featuring masked dances, sacred rituals, and the unveiling of
+                giant thangkha (thongdroel), bring communities together in
+                joyous celebration of Buddhist teachings, compassion, and
+                harmony with nature. In Bhutan, spirituality is not confined to
+                monasteries—it&#39;s a guiding philosophy that prioritizes Gross
+                National Happiness, non-violence, tolerance, and respect for the
+                environment—inviting travelers to experience an authentic,
+                unbroken tradition that nurtures the soul amid the breathtaking
+                Himalayan landscapes.
+              </p>
+            </div>
+          </div>
         </section>
-
-        {/* Gross National Section */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center p-6 z-20 mt-[-100px]">
-          {/* Text Section - Will only be as tall as its content */}
-          <div className="lg:w-[45%] border-2 border-black rounded-2xl p-5 flex flex-col relative bg-white shadow-xl">
-            <h1 className="text-center font-bold text-green-900 text-3xl mb-3 border-b-2 border-green-200 pb-2">
-              Gross National Happiness
-            </h1>
-            <p className="text-green-900 text-sm leading-relaxed">
-              Gross National Happiness (GNH) is Bhutan&#39;s unique guiding
-              philosophy for development, introduced in the early 1970s by the
-              Fourth King, Jigme Singye Wangchuck, who famously declared that
-              Gross National Happiness is more important than Gross Domestic
-              Product. Instead of prioritizing economic growth alone, GNH
-              promotes holistic well-being by balancing material progress with
-              spiritual, cultural, and environmental values, rooted in Buddhist
-              principles and the idea that the government&#39;s purpose is to
-              foster citizens&#39; happiness. It rests on *four pillars*:
-              sustainable and equitable socio-economic development, preservation
-              and promotion of culture, conservation of the environment (with
-              Bhutan maintaining over 60% forest cover as constitutionally
-              mandated), and good governance. These pillars expand into nine
-              domains—including psychological well-being, health, education,
-              community vitality, and ecological resilience—measured through the
-              GNH Index by the Centre for Bhutan &amp; GNH Studies, which guides
-              policies to enhance collective happiness and sustainability rather
-              than individual wealth.
-            </p>
-          </div>
-          {/* Image Section - Fixed height 500px */}
-          <div className="lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden">
-            <img
-              src="GNH.JPG"
-              alt="GNH Photo"
-              className="w-full h-[500px] object-cover rounded-2xl border-black"
-            />
-          </div>
-        </div>
-
-        {/* Sustainable and resposnible tourism */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center p-6 z-20 mt-[-75px]">
-          {/* Image Section - Fixed height 500px */}
-          <div className="lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden">
-            <img
-              src="Sustainable and....jpg"
-              alt="Sustainable and Responsible Tourism Photo"
-              className="w-full h-[500px] object-cover rounded-2xl border-black"
-            />
-          </div>
-          {/* Text Section - Will only be as tall as its content */}
-          <div className="lg:w-[45%] border-2 border-black rounded-2xl p-5 flex flex-col relative bg-white shadow-xl">
-            <h1 className="text-center font-bold text-green-900 text-3xl mb-3 border-b-2 border-green-200 pb-2">
-              Sustainable and Responsible Tourism
-            </h1>
-            <p className="text-green-900 text-sm leading-relaxed">
-              Bhutan pioneered sustainable and responsible tourism through its
-              renowned *&quot;High Value, Low Impact&quot;* (sometimes phrased
-              as High Value, Low Volume) policy, introduced since the 1970s and
-              guided by the principle of Gross National Happiness. This approach
-              prioritizes quality over quantity by limiting visitor numbers to
-              protect the kingdom&#39;s pristine environment, rich cultural
-              heritage, and social fabric while generating meaningful economic
-              benefits. All international tourists pay a daily *Sustainable
-              Development Fee (SDF)* of USD 100 per person (currently discounted
-              until 2027), which funds conservation, infrastructure, cultural
-              preservation, and community development. Visitors must travel with
-              licensed operators, ensuring guided, low-impact experiences that
-              foster authentic engagement rather than mass tourism. This model
-              has earned global acclaim for successfully balancing tourism with
-              long-term sustainability.
-            </p>
-          </div>
-        </div>
-
-        {/* Sustainable and resposnible tourism */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center p-6 z-20 mt-[-75px]">
-          {/* Text Section - Will only be as tall as its content */}
-          <div className="lg:w-[45%] border-2 border-black rounded-2xl p-5 flex flex-col relative bg-white shadow-xl">
-            <h1 className="text-center font-bold text-green-900 text-3xl mb-3 border-b-2 border-green-200 pb-2">
-              Living Spiritual Heritage
-            </h1>
-            <p className="text-green-900 text-sm leading-relaxed">
-              Bhutan proudly preserves its living spiritual heritage, where
-              Vajrayana Buddhism—the tantric form of Mahayana Buddhism—remains
-              vibrantly alive and deeply integrated into every facet of daily
-              life, governance, art, architecture, and community. Often
-              described as a &quot;living museum of Buddhist heritage,&quot; the
-              kingdom is dotted with thousands of ancient temples, chortens
-              (stupas), meditation retreats, and majestic dzongs
-              (fortress-monasteries) that serve as both religious centers and
-              symbols of cultural continuity. Iconic sites like *Paro Taktsang*
-              (Tiger&#39;s Nest Monastery), dramatically perched on a sheer
-              cliff and revered as a sacred pilgrimage spot blessed by Guru
-              Rinpoche (Padmasambhava), embody profound spiritual power,
-              offering visitors a chance for inner purification, mindfulness,
-              and connection to enlightenment. Colorful *tshechu* festivals,
-              featuring masked dances, sacred rituals, and the unveiling of
-              giant thangkha (thongdroel), bring communities together in joyous
-              celebration of Buddhist teachings, compassion, and harmony with
-              nature. In Bhutan, spirituality is not confined to
-              monasteries—it&#39;s a guiding philosophy that prioritizes Gross
-              National Happiness, non-violence, tolerance, and respect for the
-              environment—inviting travelers to experience an authentic,
-              unbroken tradition that nurtures the soul amid the breathtaking
-              Himalayan landscapes.
-            </p>
-          </div>
-          {/* Image Section - Fixed height 500px */}
-          <div className="lg:w-[55%] border-2 border-black rounded-2xl overflow-hidden">
-            <img
-              src="Living heritage....jpg"
-              alt="Living Heritage Photo"
-              className="w-full h-[500px] object-cover rounded-2xl border-black"
-            />
-          </div>
-        </div>
 
         <div style={{ height: "8vh", width: "100%" }} className="bg-white" />
 

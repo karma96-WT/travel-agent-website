@@ -80,7 +80,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
         isScrolled ? "bg-white/80 backdrop-blur-lg shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center justify-around px-6 py-4">
+      <div className="flex items-center justify-between lg:justify-around px-6 py-4">
         {/* Logo Section */}
         <div className="text-2xl font-bold text-blue-600 flex-shrink-0">
           <Link href="/">
@@ -167,6 +167,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
               <span className="text-green-900 font-bold">→</span>
             </div>
           )}
+          <div className="w-6"></div>
         </div>
 
         {/* Hamburger Menu Button - Mobile */}
