@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
 import { useState, useEffect } from "react";
@@ -22,184 +23,189 @@ const TreksPage = () => {
     };
   }, []);
 
-  const treks = [
+  const weathers = [
     {
       id: 1,
-      title: "Tiger’s Nest (Paro Taktsang) Trek",
-      duration: "Half-day / Full-day",
-      difficulty: "Moderate",
-      season: "March–May, September–November",
-      highlights:
-        "Iconic cliffside monastery, scenic Paro valley, meditation caves",
-      accommodation: "Stay in Paro or Thimphu hotels/lodges",
+      title: "Spring – March to May",
+      img: "/spring.png",
+      description:
+        "Spring is one of the most beautiful seasons to visit Bhutan. The weather is generally pleasant, with comfortable temperatures in many valleys and clear views of the surrounding mountains. The countryside becomes vibrant with blooming flowers, including rhododendrons, while forests and hillsides turn green. Spring is particularly suitable for sightseeing, hiking, cultural tours, photography, and exploring Bhutan's natural landscapes.",
     },
     {
       id: 2,
-      title: "Druk Path Trek",
-      duration: "6–7 days",
-      difficulty: "Moderate",
-      season: "March–May, September–November",
-      highlights:
-        "Connects Paro and Thimphu, high mountain passes, alpine lakes, prayer flags, local wildlife",
-      accommodation: "Camping along trek; some lodges in remote points",
+      title: "Summer – June to August",
+      img: "/summer.png",
+      description:
+        "Summer coincides with the monsoon season in Bhutan. The weather is generally warm and humid in the lower valleys, with regular rainfall, particularly during the monsoon months. Rain can occasionally affect road conditions and mountain visibility, but it also brings lush greenery and fresh landscapes. Travelers visiting during this period should carry rain protection and allow some flexibility in their travel schedules. Despite the rain, summer can be an excellent time to experience Bhutan's peaceful atmosphere, green valleys, cultural attractions, and fewer crowds.",
     },
     {
       id: 3,
-      title: "Jomolhari Trek",
-      duration: "10–12 days",
-      difficulty: "Challenging",
-      season: "April–June, September–October",
-      highlights:
-        "Views of Mount Jomolhari, yak herding villages, glaciers, sacred lakes",
-      accommodation: "Tented camps and mountain lodges",
+      title: "Autumn – September to November",
+      img: "/autumn.png",
+      description:
+        "Autumn is widely considered one of the most favorable seasons for traveling in Bhutan. The monsoon gradually ends, bringing clearer skies, fresh mountain air, and excellent visibility. Temperatures are generally comfortable, making this season ideal for sightseeing, trekking, hiking, photography, cultural tours, and outdoor activities. The beautiful mountain scenery combined with traditional festivals held in different parts of the country makes autumn a popular period for visitors.",
     },
     {
       id: 4,
-      title: "Snowman Trek",
-      duration: "20+ days",
-      difficulty: "Very Challenging (for experienced trekkers)",
-      season: "May–June, September",
-      highlights:
-        "Remote high Himalayas, 11 mountain passes, glaciers, rare flora and fauna",
-      accommodation: "Tented camps only (very basic, self-contained)",
-    },
-    {
-      id: 5,
-      title: "Bumthang Cultural Trek",
-      duration: "4–6 days",
-      difficulty: "Moderate",
-      season: "March–May, September–November",
-      highlights:
-        "Temples, monasteries, scenic valleys, sacred lakes, traditional villages",
-      accommodation: "Guesthouses, homestays, or small lodges",
-    },
-    {
-      id: 6,
-      title: "Laya Gasa Trek",
-      duration: "10–12 days",
-      difficulty: "Challenging",
-      season: "May–October",
-      highlights:
-        "Tibetan-influenced villages, hot springs, panoramic Himalayan views",
-      accommodation: "Tented camps, basic mountain lodges",
+      title: "Winter – December to February",
+      img: "/winter.png",
+      description:
+        "Winter brings cold and generally dry conditions, particularly in the higher valleys and mountainous regions. Days can be sunny and pleasant, while temperatures may drop significantly during the night. Snowfall is possible at higher elevations and mountain passes, creating spectacular Himalayan scenery. Lower-altitude areas can remain relatively comfortable during the daytime. Winter is an excellent time for travelers interested in clear mountain views, cultural sightseeing, photography, and experiencing the peaceful side of Bhutan. Phobjikha Valley is also particularly attractive during this season, when the valley becomes a winter habitat for the endangered black-necked cranes.",
     },
   ];
 
   return (
     <>
       <Navbar isScrolled={isScrolled} />
-      <div className="h-20 bg-white"></div>
-      <div className="bg-white min-h-screen">
-        {/* Hero Header */}
-        <header className="py-16 px-6 text-center bg-gradient-to-b from-gray-50 to-white">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6">
-            Trekkings in <span className="text-[#063b1a]">Bhutan</span>
-          </h1>
-          <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed">
-            Bhutan offers an incredible variety of treks, from easy hikes to
-            challenging high-altitude adventures. Each trek combines{" "}
-            <span className="text-[#063b1a] font-semibold">
-              breathtaking scenery, cultural experiences, and authentic local
-              encounters
-            </span>
-          </p>
-        </header>
 
-        {/* Trekking Cards Grid */}
-        <section className="max-w-7xl mx-auto px-6 pb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {treks.map((trek) => (
-              <div
-                key={trek.id}
-                className="group flex flex-col bg-white border border-gray-100 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
-              >
-                <div className="p-8">
-                  <div className="flex justify-between items-start mb-6">
-                    <span
-                      className={`px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest ${
-                        trek.difficulty.includes("Challenging")
-                          ? "bg-red-50 text-red-600"
-                          : "bg-green-50 text-[#063b1a]"
-                      }`}
-                    >
-                      {trek.difficulty}
-                    </span>
-                  </div>
-
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#063b1a] transition-colors">
-                    {trek.title}
-                  </h2>
-
-                  <div className="space-y-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-3">
-                      <span className="font-bold text-gray-400 uppercase text-[10px] w-16">
-                        Duration
-                      </span>
-                      <span className="bg-gray-50 px-3 py-1 rounded-md font-medium">
-                        {trek.duration}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="font-bold text-gray-400 uppercase text-[10px] w-16">
-                        Best Season
-                      </span>
-                      <span className="font-medium">{trek.season}</span>
-                    </div>
-                    <div className="pt-4 border-t border-gray-50">
-                      <p className="leading-relaxed">
-                        <strong className="text-gray-900 block mb-1 uppercase text-[10px] tracking-widest">
-                          Highlights
-                        </strong>
-                        {trek.highlights}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-auto p-8 bg-gray-50/50 border-t border-gray-50">
-                  <p className="text-xs italic text-gray-500 mb-4">
-                    <strong>Accommodation:</strong> {trek.accommodation}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Tips Section */}
-        <section className="max-w-5xl mx-auto px-6 pb-24">
-          <div className="bg-[#063b1a] rounded-[3rem] p-10 md:p-16 text-white relative overflow-hidden">
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-8">
-                Tips for Trekkers in Bhutan
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  {
-                    text: "Minimum 1 guide required (mandatory for all treks)",
-                  },
-                  { text: "Permit required for most regions" },
-                  {
-                    text: "Carry warm clothing, good hiking shoes, and trekking poles",
-                  },
-                  { text: "Respect local culture and environment" },
-                ].map((tip, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-4 bg-white/5 p-6 rounded-2xl backdrop-blur-sm"
-                  >
-                    <span className="text-xl"></span>
-                    <p className="text-lg text-green-50">{tip.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* Decorative Background blur */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-          </div>
-        </section>
-        <Footer />
+      {/* OLD (Broken) */}
+      <div className=" bg-cover bg-center bg-no-repeat h-70 md:h-[80vh] lg:h-[80vh] w-full">
+        <img
+          src="/travel info bg.png"
+          alt="Taktshang image"
+          className="h-70 lg:h-[80vh] w-full"
+        />
       </div>
+      <div className="flex flex-col lg:flex-row bg-white pt-1 text-black">
+        <section className="w-full lg:w-[30%] p-10">
+          <span className=" text-orange-500">SECTION 01</span>
+          <h1 className="text-2xl ">Sustainable Development Fee (SDF)</h1>
+        </section>
+        <section className="w-full lg:w-[70%] p-10">
+          <p className="text-gray-700 text-[16px] text-justify">
+            <span className="text-black block text-[18px] mb-5">
+              The Sustainable Development Fee (SDF) is a mandatory daily charge
+              supporting Bhutan's environmental conservation, cultural
+              preservation, free healthcare, and education.
+            </span>
+            As of 2026 (and valid through at least August 2027 under current
+            policy), it is USD 100 per person per night for most international
+            tourists (children 6–12 pay USD 50; under 6 are exempt). Indian
+            nationals pay INR 1,200 per person per night (with child discounts).
+            The SDF is paid in advance during visa/permit processing and is
+            separate from accommodation, meals, or tour costs—it funds
+            sustainable development initiatives under Bhutan's high-value,
+            low-volume tourism model.
+          </p>
+        </section>
+      </div>
+      <hr />
+      <div className="flex flex-col lg:flex-row bg-white pt-1 text-black">
+        <section className="w-full lg:w-[30%] p-10">
+          <span className=" text-orange-500">SECTION 02</span>
+          <h1 className="text-2xl ">Visa and entry</h1>
+        </section>
+        <section className="w-full lg:w-[70%] p-10">
+          <p className="text-gray-700 text-[16px] text-justify">
+            <span className="text-black block text-[18px] mb-5">
+              All international visitors (except nationals of India, Bangladesh,
+              and Maldives) require a visa in advance, processed online through
+              the official Department of Immigration website or a licensed
+              Bhutanese tour operator.
+            </span>
+            A one-time visa fee of USD 40 applies, along with required documents
+            like a passport copy (valid for at least six months), photo, and
+            travel insurance. Visa clearance is needed before booking flights,
+            and the visa is stamped upon arrival (typically at Paro Airport).
+            Indian nationals enter with an entry permit (often arranged online
+            or at the border). Travelers must book through a licensed operator
+            or guide, as independent travel is not permitted for most
+            nationalities.
+          </p>
+        </section>
+      </div>
+      <hr />
+      <div className="flex flex-col lg:flex-row bg-white pt-1 text-black">
+        <section className="w-[30%] p-10">
+          <span className=" text-orange-500">SECTION 03</span>
+          <h1 className="text-2xl ">Food</h1>
+        </section>
+        <section className="w-full lg:w-[70%] p-10">
+          <p className="text-gray-700 text-[16px] text-justify">
+            <span className="text-black block text-[18px] mb-5">
+              Bhutanese cuisine is hearty, flavorful, and heavily features
+              chilies as a key ingredient. The national dish is ema datshi
+              (green chilies cooked in a creamy cheese sauce), often served with
+              red rice, a nutritious Bhutanese staple.{" "}
+            </span>
+            Other popular dishes include kewa datshi (potatoes with cheese),
+            jasha maru (spicy chicken stew), and various meat preparations like
+            dried beef or pork with chilies. Meals emphasize fresh vegetables,
+            dairy (especially local cheese), and bold spices. Most tourist
+            accommodations offer a mix of Bhutanese and international options,
+            with vegetarian choices widely available. The food is generally
+            spicy but can be adjusted for milder tastes.
+          </p>
+        </section>
+      </div>
+      <hr />
+      <div className="flex flex-col lg:flex-row bg-white pt-1 text-black">
+        <section className="w-full lg:w-[30%] p-10">
+          <span className=" text-orange-500">SECTION 04</span>
+          <h1 className="text-2xl ">Dress code</h1>
+        </section>
+        <section className="w-full lg:w-[70%] p-10">
+          <p className="text-gray-700 text-[16px] text-justify">
+            <span className="text-black block text-[18px] mb-5">
+              Bhutan emphasizes modesty and respect, especially at religious
+              sites like dzongs (fortresses) and temples. Visitors should wear
+              clothing that covers shoulders and knees—no shorts, short skirts,
+              sleeveless tops, or revealing outfits in these areas.{" "}
+            </span>
+            Long pants or skirts with full-sleeve shirts are ideal. Hats should
+            be removed inside sacred spaces, and shoes are often taken off
+            (socks are helpful). In everyday settings like towns or hikes,
+            casual modern clothing is acceptable, but modest attire shows
+            cultural respect. Bhutanese people commonly wear traditional dress
+            (gho for men, kira for women) in formal or official contexts
+          </p>
+        </section>
+      </div>
+      <hr />
+      <div className="flex flex-col lg:flex-row bg-white pt-1 text-black">
+        <section className="w-full lg:w-[30%] p-10">
+          <span className=" text-orange-500">SECTION 05</span>
+          <h1 className="text-2xl ">Weather in Bhutan</h1>
+        </section>
+        <section className="w-full lg:w-[70%] p-10">
+          <p className="text-gray-700 text-[16px] text-justify">
+            <span className="text-black block text-[18px] mb-5">
+              Bhutan experiences a diverse climate throughout the year, largely
+              influenced by its varied altitude and mountainous landscape.{" "}
+            </span>
+            From the subtropical lowlands in the south to the cool valleys and
+            high Himalayan mountains in the north, the weather can change
+            significantly from one region to another. This diversity makes
+            Bhutan a year-round destination, with each season offering its own
+            unique beauty and travel experiences. Travelers are advised to
+            consider the season, destination, and planned activities when
+            preparing for their journey.
+          </p>
+        </section>
+      </div>
+      <div className="flex flex-col lg:flex-row overflow-x-auto md:grid md:grid-cols-3 gap-8 bg-white p-6">
+        {weathers.map((item) => (
+          <section
+            key={item.id}
+            className="min-w-[280px] sm:min-w-[320px] md:min-w-0 flex-1 flex flex-col"
+          >
+            <Image
+              src={item.img}
+              alt={item.title || "Weather Image"}
+              width={800}
+              height={500}
+              className="w-full h-[40vh] object-cover rounded-xl"
+            />
+            <h1 className="text-orange-500 text-2xl font-bold mt-4 mb-2">
+              {item.title}
+            </h1>
+            <p className="text-justify text-black text-sm leading-relaxed">
+              {item.description}
+            </p>
+          </section>
+        ))}
+      </div>
+      <Footer />
     </>
   );
 };
