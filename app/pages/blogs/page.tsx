@@ -27,17 +27,27 @@ const BhutanBlog = () => {
       <Navbar isScrolled={isScrolled} />
       <article className="bg-white min-h-screen ">
         {/* 1. Blog Hero Header */}
-        <header className="relative h-[60vh] cols pt-25 flex items-center justify-center overflow-hidden bg-[url('/banner-photo.jpg')]">
-          <div className="relative z-10 text-center px-6 max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-black text-green-500 leading-tight mb-6">
+        <header className="relative h-[40vh] lg:h-[80vh] pt-25 flex items-center justify-center overflow-hidden w-full bg-black">
+          {/* 1. Stretched image */}
+          <img
+            src="/banner-photo.jpg"
+            alt="Bhutan Banner"
+            className="absolute inset-0 w-full h-full object-fill z-10"
+          />
+
+          {/* 2. Dark overlay to make text visible (z-15 sits above image, below text) */}
+          <div className="absolute inset-0 bg-black/50 z-15" />
+
+          {/* 3. Your content layer */}
+          <div className="relative z-20 text-center px-6 max-w-4xl">
+            <h1 className="text-4xl md:text-6xl font-black text-gray-200 leading-tight mb-6">
               Bhutan: A Journey into the Kingdom of Happiness
             </h1>
-            <div className="text-gray-400 flex flex-row justify-between">
+            <div className="text-gray-300 flex flex-row justify-between">
               <h1>23 August, 2026</h1>
               <h1>5 Min Read</h1>
             </div>
           </div>
-        
         </header>
 
         {/* 2. Main Article Body */}
