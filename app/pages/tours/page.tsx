@@ -77,12 +77,10 @@ const BhutanToursPage: React.FC = () => {
               {toursData.map((tour: Tour) => (
                 <Link key={tour.id} href="#">
                   <div className="w-full h-[300px] border border-amber-500 text-black p-8 rounded-2xl hover:shadow-lg transition-shadow flex flex-col justify-center items-center">
-                    <h3 className="text-2xl font-semibold text-amber-700">
-                      {tour.title}
+                    <h3 className="text-2xl font-semibold text-amber-700 text-center">
+                      SO ON WILL ADD BOX AS PER INTENARIES , ITENARIES WILL SEND
+                      SEPERATELTLY
                     </h3>
-                    <p className="text-gray-600 mt-2 text-center">
-                      {tour.shortDescription}
-                    </p>
                   </div>
                 </Link>
               ))}
