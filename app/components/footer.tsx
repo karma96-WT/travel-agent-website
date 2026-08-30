@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
 
           {/* ——— Column 3: Contact & Social ——— */}
-          <div className="space-y-6">
+          <div className="space-y-6 pr-10">
             {/* Contact */}
             <div className="space-y-3">
               <h3 className="text-lg font-semibold text-white tracking-tight">
@@ -133,7 +133,7 @@ const Footer = () => {
         <div className="my-10 border-t border-gray-800" />
 
         {/* Copyright */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-gray-500">
           <span>
             &copy; {new Date().getFullYear()}{" "}
             <span className="text-gray-400">Bhutanese Tours and Treks</span>.
