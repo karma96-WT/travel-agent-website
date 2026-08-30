@@ -27,9 +27,9 @@ const BhutanBlog = () => {
       <Navbar isScrolled={isScrolled} />
       <article className="bg-white min-h-screen ">
         {/* 1. Blog Hero Header */}
-        <header className="relative h-[60vh] cols pt-25 flex items-center justify-center overflow-hidden bg-[#063b1a]">
+        <header className="relative h-[60vh] cols pt-25 flex items-center justify-center overflow-hidden bg-[url('/banner-photo.jpg')]">
           <div className="relative z-10 text-center px-6 max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+            <h1 className="text-4xl md:text-6xl font-black text-green-500 leading-tight mb-6">
               Bhutan: A Journey into the Kingdom of Happiness
             </h1>
             <div className="text-gray-400 flex flex-row justify-between">
