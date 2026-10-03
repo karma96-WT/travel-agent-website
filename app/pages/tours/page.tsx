@@ -1,4 +1,4 @@
-// app/tours/page.tsx
+// app/pages/tours/page.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -6,20 +6,18 @@ import Link from "next/link";
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
 import { toursData, type Tour } from "@/app/pages/data/toursData";
+import { itinerariesData, type Itinerary } from "@/app/pages/data/itenraydata";
 
-const BhutanToursPage: React.FC = () => {
+export default function BhutanToursPage() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 50);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -64,7 +62,7 @@ const BhutanToursPage: React.FC = () => {
             ))}
           </div>
 
-          {/* "Our Signature Bhutan Journeys" Section */}
+          {/* Our Signature Bhutan Journeys Section */}
           <div className="w-full h-auto mt-16">
             <h1 className="text-black font-bold text-4xl">
               Our Signature Bhutan Journeys
@@ -73,14 +71,28 @@ const BhutanToursPage: React.FC = () => {
               Handpicked experiences designed to help you discover Bhutan’s
               culture, nature, spirituality, and breathtaking landscapes.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
-              {toursData.map((tour: Tour) => (
-                <Link key={tour.id} href="#">
-                  <div className="w-full h-[300px] border border-amber-500 text-black p-8 rounded-2xl hover:shadow-lg transition-shadow flex flex-col justify-center items-center">
-                    <h3 className="text-2xl font-semibold text-amber-700 text-center">
-                      SO ON WILL ADD BOX AS PER INTENARIES , ITENARIES WILL SEND
-                      SEPERATELTLY
-                    </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              {itinerariesData.map((itinerary: Itinerary) => (
+                <Link
+                  key={itinerary.id}
+                  href={`/pages/itenary/${itinerary.slug}`}
+                >
+                  <div className="w-full h-[220px] border border-amber-500 bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-amber-600 transition-all cursor-pointer flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-2xl font-bold text-amber-700">
+                        {itinerary.title}
+                      </h3>
+                      <p className="text-amber-900 font-medium mt-1 text-sm">
+                        {itinerary.duration}
+                      </p>
+                      <p className="text-gray-600 mt-2 line-clamp-2 text-sm">
+                        {itinerary.overview}
+                      </p>
+                    </div>
+                    <span className="text-amber-800 font-semibold text-sm self-end">
+                      View Itinerary Details &rarr;
+                    </span>
                   </div>
                 </Link>
               ))}
@@ -91,6 +103,4 @@ const BhutanToursPage: React.FC = () => {
       <Footer />
     </>
   );
-};
-
-export default BhutanToursPage;
+}
